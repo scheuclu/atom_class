@@ -1,0 +1,121 @@
+# 1D atomic chain
+# Atomistic Modeling of Materials - Tutorial 2
+#
+# Markus Schöberl
+# m.schoeberl@tum.de
+# Professur für Kontinuumsmechanik
+# Technische Universität München
+#
+# Dezember 2015
+#
+
+# general preparation of simulation with real units as
+# described in tutorial 1
+atom_style      bond
+units           real
+dimension       3
+boundary        p p p
+processors      * 1 1
+
+# sorting of atoms in internal neighboring list
+atom_modify 	map array sort 10 1.0
+
+# use a harmonic bond - bond coeff are defined in cofiguration file
+bond_style      harmonic
+# read the data from a configuraion file (could be created also form external software package)
+read_data       data.1d.chain
+
+# use lj-potential for stabilization purpose (enfocing 1D in LAMMPS)
+pair_style	lj/cut 4 
+pair_coeff	* * 0.2376 2.0
+
+# set variable for integration timestep
+variable        dt equal 1
+timestep        ${dt}
+
+# set for output purposes
+thermo          100
+thermo_style	custom step temp pe etotal press pxx pyy pzz 
+
+# ----- Print structure
+#dump            snap all custom 10000 snap.lammpstrj id type x y z
+#dump            1 all atom 500 dum.chain_*.atom
+
+
+
+
+# ----- Minimize energy at 0K
+
+# find the equilibrium length of the simulaiton box
+fix 		RELAX all box/relax x 0 couple none
+minimize	0.0 1.0e-8 100000 1000000
+unfix		RELAX
+variable length equal "lx"
+print "Length in x-direction (Angstoms) = ${length};"
+
+
+
+
+
+
+# ----- Equilibration and thermalization
+
+# assign temperature to particles
+variable	T equal 0.01
+velocity	all create $T 111 mom yes rot yes dist gaussian
+
+# use a specific damping rate - observe which is stable
+variable	tdamp equal 1000*${dt}
+fix             LANG all langevin $T $T ${tdamp} 222 zero yes
+fix		NVE all nve
+run		100000
+unfix           LANG
+run		100000
+
+
+# ----- DEFORMATION
+
+# since we restart everything set timestep to zero
+reset_timestep	0
+
+# directives for computing properties
+compute         csym all centro/atom fcc
+compute         peratom all pe/atom 
+
+# assign variables for estimating strain and strain reate
+# first store length of the system
+variable        tmp equal "lx"
+variable        L0 equal ${tmp}
+
+# assign a strain rate which should equilibriate after each step
+variable        srate equal 1.0e10
+variable        srate1 equal "v_srate / 1.0e15"
+print           "${srate1}"
+
+fix	        2 all deform 1 x erate ${srate1} units box remap x
+
+# Output strain and stress info to file
+# for units metal, pressure is in [bars] = 100 [kPa] = 1/10000 [GPa]
+# for units real, pressure is in [atm] = 101.325 [kPa] = 101.325e-6 [GPa]
+# p2, p3, p4 are in GPa
+variable        strain equal "(lx - v_L0)/v_L0"
+variable        p1 equal "v_strain"
+variable        p2 equal "-pxx*101.325e-6"
+variable        p3 equal "-pyy*101.325e-6"
+variable        p4 equal "-pzz*101.325e-6"
+
+# fix for writing the strain and stresses to file
+fix             def1 all print 100 "${p1} ${p2} ${p3} ${p4}" file stress_strain.txt screen no
+
+# writing trajectory
+dump 		2 all atom 5000 ./dump/dump.tensile_*.atom #id type xs ys zs c_csym c_peratom fx fy fz
+
+# Display thermo
+thermo 	1000
+thermo_style	custom step v_strain temp v_p2 v_p3 v_p4 ke pe press
+
+run		200000
+
+######################################
+# SIMULATION DONE
+print "All done"

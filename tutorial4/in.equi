@@ -1,0 +1,73 @@
+variable InitLatPar equal 5.28
+variable Tinit equal 15
+variable Tequi equal 10
+variable Pequi equal 1.0
+variable TimeStep equal 1.0
+variable Steps equal 200000
+
+# ---- INITIALIZATION ----------------------------------------------------------
+#we are handling an atomistic simulation
+atom_style       atomic
+#selectin units
+units            real
+#choose dimension of problem
+dimension        2
+
+
+# ---- ATOM DEFINITION ---------------------------------------------------------
+# define lattice and lattice constant
+lattice          sq2 ${InitLatPar}
+# create a block-region with the name box dimension of one lattice unit in each direction
+region           box block 0 30 0 30 0 1 units lattice
+#given this region create a simulation box with ID 1
+create_box       1 box
+create_atoms     1 box
+mass             1 39.958
+
+
+# ---- DEFINE INTERATOMIC POTENTIAL --------------------------------------------
+# define how the atoms interact: Lennard Jones Potential with cutoff
+pair_style       lj/cut 12
+#coefficients for potential: assigning fo all atoms, epsilon [energy units] sigma [diustance units]
+pair_coeff * * 0.23818 3.405
+
+
+# ---- COMPUTES ----------------------------------------------------------------
+#compute the potential energy per atom
+compute          eng all pe/atom
+#computes the final energy of the cell system
+compute          eatoms all reduce sum c_eng
+
+# ---- EQUILIBRIATION ----------------------------------------------------------
+# reset timestep
+reset_timestep   0
+#set an appropriate timestep for time integration
+timestep         ${TimeStep}
+# assign velocity to particles according to temperature and seed
+# additional parameters for particles with rotation
+velocity         all create ${Tinit} 12345 mom yes rot no
+# thermostat integration for simulating the desired ensemble
+# integration on Noose-Hoover hamiltonian equations of motion
+fix              1 all npt temp ${Tinit} ${Tequi} 4000 iso ${Pequi} ${Pequi} 4000
+
+
+# ---- DEFINE OUTPUT PROPERTIES/TRAJECTORIES -----------------------------------
+thermo          100
+# specify the thermodynamics to calculate and shwo as output
+thermo_style     custom step lx ly lz press pxx pyy pzz pe temp pe ke etotal
+#dump command for writing the trjectories every N=2000 steps
+dump            1 all atom 2000 ./dump/dump.equilibriation_*.atom
+dump            2 all cfg 2000 ./dump/dump.test.*.cfg mass type xs ys zs id type c_eng
+# Run the simulkation for desired amount of timesteps until equilibriation
+run             ${Steps}
+
+
+# ---- DO THE NPT --------------------------------------------------------------
+#equilibriation for constant NPT ensemble
+unfix            1
+fix              1 all npt temp ${Tequi} ${Tequi} 100 iso ${Pequi} ${Pequi} 100
+# Run the simulation for the desired amount of timesteps until equilibriation
+variable         tempSteps equal "v_Steps/10"
+run              ${tempSteps}
+# output the last configuration to use it as input for the following simulations
+write_data       data.equi nocoeff

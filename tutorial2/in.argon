@@ -1,0 +1,85 @@
+variable InitLatPar internal 8.6
+
+
+# selecting units
+units real
+
+# choose dimension of problem
+dimension 3
+
+# select boundary conditions
+boundary p p p
+
+# we are handling an atomistic simulation
+atom_style atomic
+
+#define lattice and lattice constant
+lattice fcc ${InitLatPar}
+
+#create a block-region with the name "box" and the dimension of one lattice unit in each direction
+region box block 0 1 0 1 0 1 units lattice
+
+# given this region create a simulation box with ID 1
+create_box 1 box
+
+# define lattice where to place the atoms with three basis vectors
+lattice  fcc ${InitLatPar} orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
+
+# finally place atoms on th lattice places
+create_atoms  1 box
+
+# if needed for bigger systems: repliucate unit cell
+replicate 1 1 1
+
+# assign mass to atoms of group[ ID 1
+mass 1 39.48
+
+
+
+#define how the atoms interact: Lennard-Jones Potential with cut
+pair_style  lj/cut 8.5
+
+#coefficeints of potential assigning for all atoms, epsilon [energy units] sigma[distance units]
+pair_coeff  * * 0.23818 3.405
+
+### Compute for specific system properties ####################################
+
+#compute for specific system properties
+compute   eng all pe/atom
+
+# computes the final energy of the cell system
+compute  eatoms all reduce sum c_eng
+
+
+### Perform actual minimization ###############################################
+
+#in case other simulation was running before, set timestep to 0
+reset_timestep   0
+
+# fix for allowing the box to change in every directionn equally (iso) for min energy
+fix  1 all box/relax iso 0.0 vmax 0.001
+
+# output thermo dynamics every N=1 timesteps
+thermo   1
+
+# specify the thermodynamics to calculate and show as output
+thermo_style  custom step pe lx  ly press pxx pyy c_eatoms
+
+#choose minimization scheme
+min_style cg
+
+#perform minimization with the stopping tolerance in energy, force, max number of force and energy evealuations
+minimize  1e-35 1e-35 500000 1000000
+
+
+
+### Print variables and properties of interest ################################
+variable   natoms equal "count(all)"
+variable   teng equal "c_eatoms"
+variable   length equal "lx"
+variable   ecoh equal "v_teng/v_natoms"
+
+print   "Total energy (eV) = ${teng};"
+print   "NUmber of atoms = ${natoms};"
+print   "Lattice constant (Angstroms) = ${length};"
+print   "Cohesive energy (eV) = ${ecoh};"

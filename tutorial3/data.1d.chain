@@ -1,0 +1,51 @@
+ LAMMPS data file with bonds.
+
+10 atoms
+10 bonds
+
+1  atom types
+1  bond types
+
+# set the extensions of simulation box
+ 0.000000  20.000000 xlo xhi
+ -1.000000  1.000000 ylo yhi
+ -1.000000  1.000000 zlo zhi
+
+# mass of the atoms of group with ID 1
+Masses
+
+1 1.0
+
+
+# set bonding coefficients
+Bond Coeffs
+
+1 5.0 2.0000
+
+# set positions of atoms
+Atoms
+
+1 0 1 1 0 0 0 0 0
+2 0 1 3 0 0 0 0 0
+3 0 1 5 0 0 0 0 0
+4 0 1 7 0 0 0 0 0
+5 0 1 9 0 0 0 0 0
+6 0 1 11 0 0 0 0 0
+7 0 1 13 0 0 0 0 0
+8 0 1 15 0 0 0 0 0
+9 0 1 17 0 0 0 0 0
+10 0 1 19 0 0 0 0 0
+
+# set bonding between atom
+Bonds
+
+1 1 1 2
+2 1 2 3
+3 1 3 4
+4 1 4 5
+5 1 5 6
+6 1 6 7
+7 1 7 8
+8 1 8 9
+9 1 9 10
+10 1 10 1

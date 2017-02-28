@@ -1,0 +1,87 @@
+variable InitLatPar equal 5.28
+variable Tinit equal 15
+variable Tequi equal 10
+variable Pequi equal 1.0
+variable TimeStep equal 1.0
+variable Steps equal 200000
+
+
+# ---- INITIALIZATION ----------------------------------------------------------
+atom_style       atomic
+units            real
+dimension        2
+
+
+# ---- READ THE LAST CONFIGURATION ---------------------------------------------
+read_data        data.equi
+
+
+# ---- SPECIFY THE INTERACTION -------------------------------------------------
+#defiine how the atoms interact: Lennard-Jones potential with cut
+pair_style       lj/cut 12
+pair_coeff       * * 0.23818 3.405
+
+
+# ---- EQUILIBRIATION ----------------------------------------------------------
+reset_timestep   0
+timestep         ${TimeStep}
+fix              1 all npt temp ${Tequi} ${Tequi} 100 iso ${Pequi} ${Pequi} 100
+
+
+# ---- SET THERMO OUTPUT -------------------------------------------------------
+thermo           1000
+thermo_style     custom step lx ly lz press pxx pyy pzz pe temp
+
+
+# ---- PERFORMING FEWER STEPS FOR EQUILIBRIATION -------------------------------
+variable         tempSteps equal "v_Steps/10"
+run              ${tempSteps}
+unfix            1
+
+
+# --- DEFORMATION --------------------------------------------------------------
+#change name of log file
+log              tensile.log
+#since we restart everything set timestep to 0
+reset_timestep   0
+#directives for computing properties
+compute          csym all centro/atom fcc
+compute          peratom all pe/atom
+
+
+# --- STORE INITIAL LENGTH AND SPECIFY STRAIN RATE -----------------------------
+# assign varaibles for estimating strain and strain rate
+# first store length of the sytem
+variable        L0 equal $(lx)
+# assign a strain rate which should equilibriate after each step
+variable        srate equal 0.013e10
+variable        srate1 equal "v_srate / 1.05e15"
+print            "${srate1}"
+# fix for deforming the system in x-direction
+fix             2 all deform 1 x erate ${srate1} units box remap x
+
+
+# ---- SPECIFY COMPUTES --------------------------------------------------------
+# Output strain and stress information to file
+# for units metal, pressure is in [bar] = 100kPa = 1/10000 [GPa]
+# for units real, pressure is in [atm] = 101.325 [kPa] = 101.325e-6 [GPa]
+# p1, p2, p3, p4 aer in GPa
+variable       strain equal "(lx - v_L0)/v_L0"
+variable       p1 equal "v_strain"
+variable       p2 equal "-pxx*101.325e-6"
+variable       p3 equal "-pyy*101.325e-6"
+variable       p4 equal "-pzz*101.325e-6"
+
+
+# ---- STORE INITIALS AND ENFORCE DEFORMATION ----------------------------------
+# fix for writing the strain and stresses to file
+fix            def1 all print 100 "{p1}_{p2}_{p3}_{p4}" file stress_strain.txt screen no
+# writing trajectory
+dump           2 all atom 5000 ./dump/dump.tensile_*.atom
+dump           3 all cfg 5000 ./dump/dump.test.*.cfg mass type xs ys zs id type c_peratom
+dump           4 all atom 5000 ./dump/dump.xyz_*.xyz
+# display thermo
+thermo          1000
+thermo_style   custom step v_strain temp v_p2 v_p3 v_p4 ke pe press
+#run the simulation
+run            ${Steps}
