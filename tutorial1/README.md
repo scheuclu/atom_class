@@ -23,6 +23,10 @@ Contains the files [dampvals](./scriptinput/dampvals), [numsteps](./scriptinput/
 ```diff
 - These files control the automatic input file generation. If you want to used different parameters for timestep, dampin-values, etc., just change these files and re-run the run-scripts.
 ```
+<body>
+   <p style="color:#FF0000";>These files control the automatic input file generation. If you want to used different parameters for timestep, dampin-values, etc., just change these files and re-run the run-scripts.</p></p>
+</body>
+
 
 ### [./logfiles](logfiles)
 Contains all log-files from all LAMMPS runs. In particular it contains a seperate logfile for each timestep damping-parameter combination.
