@@ -27,6 +27,7 @@ atom_style      atomic
 lattice         fcc ${InitLatPar} orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
 # create a block-region with the name box dimension of one lattice unit in each direction
 # desired size is around six times the equibrilated unit cell
+# Since 32/5.276 ~= 6
 region          box block 0 6 0 6 0 6 units lattice
 # given this region create a simulation box with ID 1
 create_box      1 box
@@ -84,9 +85,10 @@ thermo 100
 thermo_style custom step lx ly lz press pxx pyy pzz pe temp pe ke etotal
 
 # dump command for writing the trajectories for every N=250 steps
-dump 1 all atom 250 dump.equibrilation_*.atom
+dump 1 all atom 250 ./dump/dump.equi_dt20_*.atom
 
 # Run for the simulation for desired amount of timesteps until equilibration
+logfile log.argoNVT_dt20
 run 20000
 
 # the regular input script for finding the equilibrium state ends here

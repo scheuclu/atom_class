@@ -1,0 +1,51 @@
+LAMMPS (17 Nov 2016)
+# 3d Lennard-Jones melt
+
+# determines the style of units for all quanties. In this case lj is used, w=hich is a unitless style
+# See the LAMMPS manual for the connection between unitless and real value
+units		lj
+
+# Defines the style of atomes used; atomic is the fdefualt value
+atom_style	atomic
+
+# Define a face-centered cubic lattice; Since we are using LJ units, the scale must be interpreted as reduces density rho*
+lattice		fcc 0.8442
+Lattice spacing in x,y,z = 1.6796 1.6796 1.6796
+
+#Defines a geometric region of space; In this case a region of cubic shape with size 10 is defined and the ID "box" is associated with it
+region		box block 0 10 0 10 0 10
+# Creates box and defines that only one atom-type is used in the box
+create_box	1 box
+Created orthogonal box = (0 0 0) to (16.796 16.796 16.796)
+  1 by 1 by 1 MPI processor grid
+# Set atom type to 1
+create_atoms	1 box
+Created 4000 atoms
+# Define a mass for atom-type 1
+mass		1 1.0
+
+#Change velocity of all atom groups by creating wih a tempetature value of 3 and a random seed of 87287
+velocity	all create 3.0 87287
+
+# Use a cutoff Lenard Jones potential with a cutoff radius of 2.5(distance units)
+pair_style	lj/cut 2.5
+
+#Coefficients for the Lenard Jones potential
+pair_coeff	1 1 1.0 1.0 2.5
+
+# Defines a skin distance(extra distance befor cutoff) of 0.3. The list of neighbours is created in binning style
+neighbor	0.3 bin
+
+#Build the neighbour list every 20 steps; no delay
+# If check is set to true, the neighbour list is only rebuilt if an atom has moved at least half the skin distance
+neigh_modify	every 20 delay 0 check no
+
+#Define a fix with ID 1 that is allpied to all atom-groups.
+# In LAMMPS, a fix is any operation that is applied to the system during time stepping or minimization.
+# nve defines constate NVE time integration
+# NVE stands for Volume and Energy and creates a system trajectory that is consitent with the microcanonical ensemble.
+fix		1 all nve
+
+
+dump		1 all custom 5 dump.melt* x, y
+ERROR: Invalid attribute in dump custom command (../dump_custom.cpp:130)

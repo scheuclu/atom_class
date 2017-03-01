@@ -57,12 +57,15 @@ compute  eatoms all reduce sum c_eng
 reset_timestep   0
 
 # fix for allowing the box to change in every directionn equally (iso) for min energy
+# iso means that the box deforms equally in all directions
+# vmax 0.001 limits the fractional change of the control box volume in one iteration
 fix  1 all box/relax iso 0.0 vmax 0.001
 
 # output thermo dynamics every N=1 timesteps
 thermo   1
 
 # specify the thermodynamics to calculate and show as output
+# thermostyle determines the quantities that are written to the log file
 thermo_style  custom step pe lx  ly press pxx pyy c_eatoms
 
 #choose minimization scheme

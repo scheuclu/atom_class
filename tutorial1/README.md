@@ -1,0 +1,46 @@
+# Tutorial 1
+
+## Usage
+In order to use this scripts, please set the following environment variables:
+### LAMMPSBIN
+Pointing to your lmp_mpi binary
+### LOG2TXT
+Pointing to log2txt.py from the LAMMPS/tools folder
+
+You can set an environment variable like this:
+```{r, engine='bash', count_lines}
+export LAMMPSBIN=/home/scheuclu/programs/lammps/src/lmp_mpi
+```
+
+## Structure
+
+This directory contains the LAMMPS input files. For the equilibriation tasks, where many diffrerent parameter combinations have to be run, the inputfiles are templated. Shell scripts thatn loop over different values for timestep and damping parameters and create actual input files with them, that are then run with lammps.
+
+### [./logfiles](logfiles)
+Contains all log-files from all LAMMPS runs. In particular it contains a seperate logfile for each timestep damping-parameter combination.
+
+### [./results](results)
+The postprocess scripts run over the logfiles and extract data that will be plotted. This extractionis done via log2txt.py from the LAMMPS tools library. Each extracted dataset will be stored in this folder.
+
+### [./plots](plots)
+This folder contains the .png-plots created by postprocess.sh
+
+
+
+## Files
+
+### [./clean.sh](./clean.sh)
+Removes all output and postprocessing files from previous runs.
+
+### [./run_minimize.sh](./run_minimize.sh)
+Runs the minimization process to determine the lattice constant. The result value is printed to the terminel in green.
+
+### [./run_NVT.sh](run_NVT.sh)
+Runs the Equilibrium with NVT ensemble. The script automatically loops over different values for the timestep and the damping parameter. For each run, a seperate logfile is writtten to [logfiles](./logfiles), and dump is stored to [dump](dump).
+
+### [./postprocess_NVT.sh](postprocess_NVT.sh)
+Loops over all the logfiles created by the run script for the NVT ensemble, and creates a plot of every possible quatity in that logfile plotted  over simulation time. Every plottitle contains the relative variance of that data.
+
+### [./postprocess_Ber.sh](postprocess_Ber.sh)
+Loops over all the logfiles created by the run script for the Ber ensemble, and creates a plot of every possible quatity in that logfile plotted  over simulation time. Every plottitle contains the relative variance of that data.
+
