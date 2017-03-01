@@ -10,6 +10,7 @@ for i in 0 1 2  ; do
   for dampval in ${dampvals[@]}; do
     for quantity in PotEng Press Temp KinEng TotEng; do
       for ensemble in Ber NVT; do
+        echo
         ${LOG2TXT} ./logfiles/log.argon${ensemble}_dt${timesteps[i]}_damp${dampval}\
                  results/${ensemble}_covergence_${quantity}_dt${timesteps[i]}_damp${dampval}.txt\
                  Time ${quantity}
