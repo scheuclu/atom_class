@@ -4,6 +4,7 @@ import sys
 import numpy as np
 
 from relative_variance import relvariance_nparray
+from relative_variance import cut_nparray
 
 
 
@@ -25,7 +26,9 @@ if __name__ == "__main__":
           skip_header=0,skip_footer=0,names=[nameX,nameY])
   xdata=data[nameX]
   ydata=data[nameY]
+  ydata_avg=np.average(cut_nparray(ydata))
   plt.plot(xdata,ydata)
+  plt.plot(xdata,ydata*0+ydata_avg,'--')
   plt.xlabel(nameX)
   plt.ylabel(nameY)
 

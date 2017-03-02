@@ -71,7 +71,7 @@ compute         eatoms all reduce sum c_eng
 # in case other simulation was running before set timestep to zero
 reset_timestep	0
 # set an appropriate timesetp for time integration
-timestep       40
+timestep       10
 
 # assign velocity to particles according to temperature and seed
 # additional parameters for particles with rotation
@@ -83,7 +83,7 @@ velocity all create 180 12345 mom yes rot no
 
 # thermostat integration for simulating the desired ensemble
 # integration on Nose-Hoover hamiltionian equations of motion
-fix 1 all npt temp 180 180 10000 iso 400 400 20000
+fix 1 all npt temp 300 300 1000 iso 400 400 1000
 # FOR BERENDSEN
 # fix 1 all nve
 # fix 2 all temp/berendsen 180 180 <dampval>
@@ -91,10 +91,10 @@ fix 1 all npt temp 180 180 10000 iso 400 400 20000
 # output thermodynamics (T,E,P,etc.) every N=100 step
 thermo 200
 # specify the thermodynamics to calculate and show as output
-thermo_style custom step time lx ly lz vol press pxx pyy pzz pe temp pe ke etotal
+thermo_style custom step time lx ly lz density vol press pxx pyy pzz pe temp pe ke etotal
 
 # dump command for writing the trajectories for every N=250 steps
-dump 1 all atom 500 ./dump/dump.Ber_dt20_*.atom
+dump 1 all atom 500 ./dump/dump.argonNPT_melt_temp300
 
 # Run for the simulation for desired amount of timesteps until equilibration
-log ./logfiles/log.argonNPT
+log ./logfiles/log.argonNPT_melt_temp300

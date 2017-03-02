@@ -13,6 +13,9 @@ def relvariance_nparray(data):
     relvar = (1/N*sum(data*data)-pow(1/N*sum(data),2))/pow(1/N*sum(data),2)
     return relvar
 
+def cut_nparray(data):
+    return data[int(len(data)/2):]
+
 
 if __name__ == "__main__":
     if len(sys.argv)<3:
