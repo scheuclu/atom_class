@@ -1,4 +1,4 @@
 
-mpirubn -n 4 $LAMMPSBIN < in.argonNPT_template.txt
+mpirun -n 4 $LAMMPSBIN < in.argonNPT_template.txt
 
 

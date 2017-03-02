@@ -40,7 +40,7 @@ if __name__ == "__main__":
     plt.ylabel('Density')
     plt.title('Density over temperature')
     plt.gca().grid(True)
-    plt.savefig('./plots/melt/NPT_density_over_temperature.png',format='png',dpi=200)
+    plt.savefig('./plots/melt/NPT_Density_over_Temp.png',format='png',dpi=200)
     plt.close()
 
     plt.plot(temprange,kineng_red,'-')
@@ -48,4 +48,4 @@ if __name__ == "__main__":
     plt.ylabel('Kinetic Energy')
     plt.title('Kinetic Energy over Temperature')
     plt.gca().grid(True)
-    plt.savefig('./plots/melt/NPT_KinEng_over_temperature.png',format='png',dpi=200)
+    plt.savefig('./plots/melt/NPT_KinEng_over_Temp.png',format='png',dpi=200)

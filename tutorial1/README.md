@@ -49,6 +49,10 @@ Contains plots that anaylze the dependency of the relaive varaince with respect 
 ####   [./plots/NPT](./plots/NPT)
 Contains the convergence plots for the NPT ensemble. at constant pressure at temperature.
 
+####  [./plots/melt](./plots/melt)
+Contain all plots related to the phase transition exercise.
+As can be seen from the [density-plot](./plots/melt/NPT_Density_over_Temp.png), a phase transition occurs at around 100K.
+
 
 ## Files
 
@@ -88,3 +92,7 @@ The results are stored in [./plots/syssize](./plots/syssize)
 Creates the plots for the MD-NPT equilibrium.
 Plots are stores in [./plots/NPT](./plots/NPT)
 
+
+### [./postprocess_melt.sh](./postprocess_melt.sh)
+Creates the plots assoicated with the pahse-transition anlaysis.
+The [density-plot](./plots/melt/NPT_Density_over_Temp.png) shows a phase transition at around 100K;
