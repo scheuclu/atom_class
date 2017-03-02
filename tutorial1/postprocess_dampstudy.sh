@@ -24,7 +24,7 @@ for i in 0 1 2  ; do
                      dampval=${dampvals[0]}\
                      dampval=${dampvals[1]}\
                      dampval=${dampvals[2]}\
-                     dampstudy_${esemble}_${quantity}_over_time_dt${timesteps[i]}
+                     ${ensemble}_${quantity}_over_time_dt${timesteps[i]}
     done
   done
 done

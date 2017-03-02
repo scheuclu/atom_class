@@ -74,10 +74,10 @@ velocity all create 180 12345 mom yes rot no
 
 # thermostat integration for simulating the desired ensemble
 # integration on Nose-Hoover hamiltionian equations of motion
-# fix 1 all nvt temp 180 180 10000
+fix 1 all nvt temp 180 180 <dampval>
 # FOR BERENDSEN
- fix 1 all nve
- fix 2 all temp/berendsen 180 180 <dampval>
+# fix 1 all nve
+# fix 2 all temp/berendsen 180 180 <dampval>
 
 # output thermodynamics (T,E,P,etc.) every N=100 step
 thermo <outfreq>
