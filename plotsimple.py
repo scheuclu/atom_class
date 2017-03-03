@@ -26,9 +26,14 @@ if __name__ == "__main__":
           skip_header=0,skip_footer=0,names=[nameX,nameY])
   xdata=data[nameX]
   ydata=data[nameY]
-  ydata_avg=np.average(cut_nparray(ydata))
   plt.plot(xdata,ydata)
-  plt.plot(xdata,ydata*0+ydata_avg,'--')
+
+  #calculate and plot the mean value
+  ydata_avg=np.average(cut_nparray(ydata))
+  ydata_max=np.max(cut_nparray(ydata))
+  plt.text(xdata[int(len(xdata)/2)],ydata_max,'Avergage '+nameY+":"+"{:.2E}".format(ydata_avg),color='green')
+  plt.plot(xdata,ydata*0+ydata_avg,'--g')
+
   plt.xlabel(nameX)
   plt.ylabel(nameY)
 
