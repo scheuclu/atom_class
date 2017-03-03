@@ -54,7 +54,8 @@ fix              1 all npt temp ${Tinit} ${Tequi} 4000 iso ${Pequi} ${Pequi} 400
 # ---- DEFINE OUTPUT PROPERTIES/TRAJECTORIES -----------------------------------
 thermo          100
 # specify the thermodynamics to calculate and shwo as output
-thermo_style     custom step lx ly lz press pxx pyy pzz pe temp pe ke etotal
+thermo_style     custom step time lx ly lz press pxx pyy pzz pe temp pe ke etotal
+log             ./logfiles/equi.txt
 #dump command for writing the trjectories every N=2000 steps
 dump            1 all atom 2000 ./dump/dump.equilibriation_*.atom
 dump            2 all cfg 2000 ./dump/dump.test.*.cfg mass type xs ys zs id type c_eng

@@ -2,8 +2,8 @@ variable InitLatPar equal 5.28
 variable Tinit equal 15
 variable Tequi equal 10
 variable Pequi equal 1.0
-variable TimeStep equal 1.0
-variable Steps equal 200000
+variable TimeStep equal 4.0
+variable Steps equal 4000000
 
 
 # ---- INITIALIZATION ----------------------------------------------------------
@@ -75,13 +75,14 @@ variable       p4 equal "-pzz*101.325e-6"
 
 # ---- STORE INITIALS AND ENFORCE DEFORMATION ----------------------------------
 # fix for writing the strain and stresses to file
-fix            def1 all print 100 "{p1}_{p2}_{p3}_{p4}" file stress_strain.txt screen no
+fix            1 all print 100 "${p1} ${p2} ${p3} ${p4}" file ./results/stress_strain.txt screen no
 # writing trajectory
-dump           2 all atom 5000 ./dump/dump.tensile_*.atom
-dump           3 all cfg 5000 ./dump/dump.test.*.cfg mass type xs ys zs id type c_peratom
-dump           4 all atom 5000 ./dump/dump.xyz_*.xyz
+dump           2 all atom 10000 ./dump/dump.tensiletest_*.atom
+dump           3 all cfg 10000 ./dump/dump.cfg_tensiletest_*.cfg mass type xs ys zs fx fy fz id type c_peratom
+#dump           4 all atom 5000 ./dump/dump.xyz_tensiletest_*.xyz
 # display thermo
 thermo          1000
-thermo_style   custom step v_strain temp v_p2 v_p3 v_p4 ke pe press
+thermo_style   custom step time v_strain temp v_p1 v_p2 v_p3 v_p4 ke pe press
+log            ./logfiles/tensiletest.txt
 #run the simulation
 run            ${Steps}
