@@ -1,6 +1,5 @@
-LAMMPS (17 Nov 2016)
 
-variable InitLatPar equal 5.260
+variable InitLatPar equal 5.260 
 
 # ----- INITIALIZATION
 
@@ -17,32 +16,22 @@ atom_style      atomic
 
 # define lattice and lattice constant
 lattice         fcc ${InitLatPar}
-lattice         fcc 5.26
-Lattice spacing in x,y,z = 5.26 5.26 5.26
 # create a block-region with the name box dimension of one lattice unit in each direction
 # desired size is around six times the equibrilated unit cell
 region          box block 0 6 0 6 0 6 units lattice
 # given this region create a simulation box with ID 1
 create_box      1 box
-Created orthogonal box = (0 0 0) to (31.56 31.56 31.56)
-  1 by 1 by 1 MPI processor grid
 
 # ----- CREATE ATOMS
 
 # define lattice where to place the atoms with three basis vectors
 lattice         fcc ${InitLatPar} orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
-lattice         fcc 5.26 orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
-Lattice spacing in x,y,z = 5.26 5.26 5.26
 # finally place the atoms on the lattice places
 create_atoms    1 box
-Created 864 atoms
 # in the case one wants enforce velocities right in the beginning
-#create_atoms   1 random 300 458887 box
+#create_atoms   1 random 300 458887 box 
 # if needed for bigger systems: replicate unit cell
 replicate       1 1 1
-  orthogonal box = (0 0 0) to (31.56 31.56 31.56)
-  1 by 1 by 1 MPI processor grid
-  864 atoms
 # assign mass to atoms of group with ID 1
 mass            1 39.948
 
@@ -64,38 +53,23 @@ compute         eatoms all reduce sum c_eng
 
 # in case an other simulation was running before set timestep to zero
 reset_timestep	0
-timestep 20
 
 # assign velocity to particles according to temperature and seed
 # additional parameters for particles with rotation
 velocity all create 180 12345 mom yes rot no
 
 # Use MCMC implementation of LAMMPS
-fix 1 all  nvt temp 180 180 20000
-variable  N equal 10
-variable  X equal 0
-variable  M equal 900
-variable  type equal 1
-variable  seed equal 29494
-variable  T equal 180
-variable  mu equal 0
-variable  translate equal 5.0
-#fix 2 all gcmc 1 0 900 1 29494 180 0 0.1
-fix 2 all gcmc ${N} ${X} ${M} ${type} ${seed} ${T} ${mu} ${translate}
-fix 2 all gcmc 10 ${X} ${M} ${type} ${seed} ${T} ${mu} ${translate}
-fix 2 all gcmc 10 0 ${M} ${type} ${seed} ${T} ${mu} ${translate}
-fix 2 all gcmc 10 0 900 ${type} ${seed} ${T} ${mu} ${translate}
-fix 2 all gcmc 10 0 900 1 ${seed} ${T} ${mu} ${translate}
-fix 2 all gcmc 10 0 900 1 29494 ${T} ${mu} ${translate}
-fix 2 all gcmc 10 0 900 1 29494 180 ${mu} ${translate}
-fix 2 all gcmc 10 0 900 1 29494 180 0 ${translate}
-fix 2 all gcmc 10 0 900 1 29494 180 0 5
+fix 2 all gcmc 1 0 900 1 29494 180 0 0.1 
 
 # output thermodynamics (T,E,P,etc.) every N=1 step
-thermo 20#100
+thermo 100
 # specify the thermodynamics to calculate and show as output
-thermo_style custom step time lx ly lz press pxx pyy pzz pe temp pe ke etotal
+thermo_style custom step lx ly lz press pxx pyy pzz pe temp pe ke etotal
 
 # dump command for writing the trajectories for ever N=250 steps
-dump 1 all atom 250 ./dump/dump.equi_gcmc_trans5.0_*.atom
-log ./logfiles/log.equi_gcmc_trans5.0_damp20000.txt
+dump 1 all atom 250 ./dump/dump.equi_gcmc_*.atom
+log ./logfiles/log.equi_gcmc
+
+run 20000
+
+quit
