@@ -19,14 +19,14 @@ for quantity in PotEng Press Temp KinEng TotEng; do
                    Equilibriation_${quantity}
 done
 
-#for quantity in Temp v_p2 v_p3 v_p4 KinEng PotEng Press; do
-  #${LOG2TXT} ./logfiles/equi.txt\
-             #./results/equi_${quantity}.txt\
-             #Time ${quantity}
+for quantity in Temp v_p2 v_p3 v_p4 KinEng PotEng Press; do
+  ${LOG2TXT} ./logfiles/tensiletest.txt\
+             ./results/tensile_${quantity}.txt\
+             Time ${quantity}
 
-  #../plotsimple.py ./results/equi_${quantity}.txt\
-                   #./plots/equi_${quantity}.png\
-                   #Time ${quantity}\
-                   #Equilibriation_${quantity}
-#done
+  ../plotsimple.py ./results/tensile_${quantity}.txt\
+                   ./plots/tensile_${quantity}.png\
+                   Time ${quantity}\
+                   tensile-test_${quantity}
+done
 
