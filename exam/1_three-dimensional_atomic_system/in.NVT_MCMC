@@ -1,0 +1,84 @@
+
+variable InitLatPar equal 5.90 
+
+# ----- INITIALIZATION
+
+# selecting units (it is important to be consistent)
+units           real
+# choose dimension of problem
+dimension       3
+# select boundary conditions
+boundary        p p p
+# we are handling an atomistic simulation
+atom_style      atomic
+
+# ----- ATOM DEFINITION
+
+# define lattice and lattice constant
+lattice         fcc ${InitLatPar}
+# create a block-region with the name box dimension of one lattice unit in each direction
+# desired size is around six times the equibrilated unit cell
+region          box block 0 5 0 5 0 5 units lattice
+# given this region create a simulation box with ID 1
+create_box      1 box
+
+# ----- CREATE ATOMS
+
+# define lattice where to place the atoms with three basis vectors
+lattice         fcc ${InitLatPar} orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
+# finally place the atoms on the lattice places
+create_atoms    1 box
+# in the case one wants enforce velocities right in the beginning
+#create_atoms   1 random 300 458887 box 
+# if needed for bigger systems: replicate unit cell
+replicate       1 1 1
+# assign mass to atoms of group with ID 1
+mass            1 86.798
+
+# ----- DEFINE INTERATOMIC POTENTIAL
+
+# define how the atoms interact: Lennard-Jones potential with cut
+pair_style      lj/cut 12.0
+# coefficients of potential: assigning for all atoms, epsilon [energy units] sigma [distance units]
+pair_coeff      * * 0.3228 3.65
+
+# ----- COMPUTES
+
+# compute the potential energy per atom
+compute         eng all pe/atom
+# computes the final energy of the cell system
+compute         eatoms all reduce sum c_eng
+
+# ----- EQUILIBRATION
+
+# in case an other simulation was running before set timestep to zero
+reset_timestep	0
+timestep 10
+
+# assign velocity to particles according to temperature and seed
+# additional parameters for particles with rotation
+velocity all create 180 12345 mom yes rot no
+
+# Use MCMC implementation of LAMMPS
+#fix 1 all  nvt temp 180 180 <dampval>
+
+variable  N equal 1
+variable  X equal 0
+variable  M equal 500
+variable  type equal 1
+variable  seed equal 29494
+variable  T equal 180
+variable  mu equal 0
+variable  translate equal 1.0
+fix 2 all gcmc ${N} ${X} ${M} ${type} ${seed} ${T} ${mu} ${translate}
+
+# output thermodynamics (T,E,P,etc.) every N=1 step
+thermo 20#100
+# specify the thermodynamics to calculate and show as output
+thermo_style custom step time lx ly lz press pxx pyy pzz pe temp pe ke etotal
+
+# dump command for writing the trajectories for ever N=250 steps
+dump 1 all atom 250 ./dump/NVT_gcmc_damp<dampval>*.atom
+log ./logfiles/NVT_gcmc_damp<dampval>.txt
+
+run 20000#20000
