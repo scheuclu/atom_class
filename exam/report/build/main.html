@@ -1,0 +1,1152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="main.tex"> 
+<meta name="date" content="2017-03-07 14:55:00"> 
+<link rel="stylesheet" type="text/css" href="main.css"> 
+</head><body 
+>
+<!--l. 106--><p class="noindent" >
+                                                                                                  
+                                                                                                  
+
+<!--l. 108--><p class="noindent" ><img 
+src="tum_logo.png" alt="PIC"  
+>
+<!--l. 109--><p class="noindent" ><span 
+class="cmcsc-10x-x-172">T<span 
+class="small-caps">e</span><span 
+class="small-caps">c</span><span 
+class="small-caps">h</span><span 
+class="small-caps">n</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span> U<span 
+class="small-caps">n</span><span 
+class="small-caps">i</span><span 
+class="small-caps">v</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">s</span><span 
+class="small-caps">i</span><span 
+class="small-caps">t</span><span 
+class="small-caps">y</span> <span 
+class="small-caps">o</span><span 
+class="small-caps">f</span> M<span 
+class="small-caps">u</span><span 
+class="small-caps">n</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">h</span></span>
+<!--l. 111--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">A<span 
+class="small-caps">t</span><span 
+class="small-caps">o</span><span 
+class="small-caps">m</span><span 
+class="small-caps">i</span><span 
+class="small-caps">s</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span> M<span 
+class="small-caps">o</span><span 
+class="small-caps">d</span><span 
+class="small-caps">e</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span> <span 
+class="small-caps">o</span><span 
+class="small-caps">f</span> M<span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">s</span></span>
+
+<!--l. 113--><p class="noindent" ><img 
+src="titlepicture2.png" alt="PIC"  
+>
+<!--l. 114--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Final Project</span>
+<!--l. 116--><p class="noindent" ><span 
+class="cmti-12x-x-120">Lukas Scheucher</span>
+<!--l. 120--><p class="noindent" ><span 
+class="cmr-12">March 7, 2017</span>
+                                                                                                  
+                                                                                                  
+                                                                                                  
+                                                                                                  
+   <h2 class="likechapterHead"><a 
+ id="x1-1000"></a>Contents</h2> <div class="tableofcontents">
+   <span class="chapterToc" >1 <a 
+href="#x1-30001" id="QQ2-1-3">Three-dimensional atomistic system</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.1 <a 
+href="#x1-40001.1" id="QQ2-1-4">Determination of lattice constant</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.2 <a 
+href="#x1-50001.2" id="QQ2-1-6">Constant temperature and molecular dynamics</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.2.1 <a 
+href="#x1-60001.2.1" id="QQ2-1-7">Equilibriation</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.2.2 <a 
+href="#x1-70001.2.2" id="QQ2-1-10">Stability comparison between Noose-Hoover and Berendsen</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.2.3 <a 
+href="#x1-80001.2.3" id="QQ2-1-13">Dependence on the system-size</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.2.4 <a 
+href="#x1-90001.2.4" id="QQ2-1-15">MCMC</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.3 <a 
+href="#x1-110001.3" id="QQ2-1-18">Constant pressure/temperature molecular dynamics</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.3.1 <a 
+href="#x1-120001.3.1" id="QQ2-1-19">Finding the equilibrium box sizes</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.3.2 <a 
+href="#x1-130001.3.2" id="QQ2-1-23">Evaluation of CV</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.4 <a 
+href="#x1-180001.4" id="QQ2-1-30">Phase transition of Krypton</a></span>
+<br />   <span class="chapterToc" >2 <a 
+href="#x1-190002" id="QQ2-1-37">Two-dimensional atomistic tensile test</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.1 <a 
+href="#x1-200002.1" id="QQ2-1-38">Equilibriation</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.2 <a 
+href="#x1-210002.2" id="QQ2-1-42">Tensile test</a></span>
+   </div>
+                                                                                                  
+                                                                                                  
+   <h2 class="likechapterHead"><a 
+ id="x1-2000"></a>List of Figures</h2><div class="tableofcontents"><span class="lofToc" >1.1&#x00A0;<a 
+href="#x1-40141">Lattice constant determination - convergence</a></span><br /><span class="lofToc" >1.2&#x00A0;<a 
+href="#x1-60012">Influence of
+the damping parameter on results - time convergence</a></span><br /><span class="lofToc" >1.3&#x00A0;<a 
+href="#x1-60023">Influence of the damping
+parameter on results - histograms</a></span><br /><span class="lofToc" >1.4&#x00A0;<a 
+href="#x1-70014">Comparisons between Nose-Hoover thermostat
+and weakly-coupled Berendsen thermostat - time convergence</a></span><br /><span class="lofToc" >1.5&#x00A0;<a 
+href="#x1-70025">Comparisons
+between Nose-Hoover thermostat and weakly-coupled Berendsen thermostat -
+histograms</a></span><br /><span class="lofToc" >1.6&#x00A0;<a 
+href="#x1-80016">Influence of the atom number on the results quality</a></span><br /><span class="lofToc" >1.7&#x00A0;<a 
+href="#x1-100017">Comparison
+between MCMC and NVT-MD</a></span><br /><span class="lofToc" >1.8&#x00A0;<a 
+href="#x1-120028">Determination of equilibrated box-size</a></span><br /><span class="lofToc" >1.9&#x00A0;<a 
+href="#x1-120039">Influence
+of the system size on the relative variance of pressure results</a></span><br /><span class="lofToc" >1.10&#x00A0;<a 
+href="#x1-1200410">Density results
+over box-size</a></span><br /><span class="lofToc" >1.11&#x00A0;<a 
+href="#x1-1600111">Equilibriation under NPT ensemble</a></span><br /><span class="lofToc" >1.12&#x00A0;<a 
+href="#x1-1600212">Equilibrium box-length
+estimation under NPT-ensemle</a></span><br /><span class="lofToc" >1.13&#x00A0;<a 
+href="#x1-1800113">Phase transition of Krypton under NPT
+ensemble</a></span><br /><span class="lofToc" >a&#x00A0;<a 
+href="#x1-18002r1"><span 
+class="cmmi-10">T </span>= 130<span 
+class="cmmi-10">&#x00A0;K</span></a></span><br /><span class="lofToc" >b&#x00A0;<a 
+href="#x1-18003r2"><span 
+class="cmmi-10">T </span>= 131<span 
+class="cmmi-10">&#x00A0;K</span></a></span><br /><span class="lofToc" >c&#x00A0;<a 
+href="#x1-18004r3"><span 
+class="cmmi-10">T </span>= 177<span 
+class="cmmi-10">&#x00A0;K</span></a></span><br /><span class="lofToc" >d&#x00A0;<a 
+href="#x1-18005r4"><span 
+class="cmmi-10">T </span>= 178<span 
+class="cmmi-10">&#x00A0;K</span></a></span><br /><span class="lofToc" >1.15&#x00A0;<a 
+href="#x1-1800615">Visualization of
+the trajectories during the phase transitions</a></span><br /><span class="lofToc" >2.1&#x00A0;<a 
+href="#x1-200011">Determination of appropriate damping
+parameters - Potential Energy</a></span><br /><span class="lofToc" >2.2&#x00A0;<a 
+href="#x1-200022">Determination of appropriate damping parameters -
+Temperature</a></span><br /><span class="lofToc" >2.3&#x00A0;<a 
+href="#x1-200033">System snapshots of the 2D system during equilibriation</a></span><br /><span class="lofToc" >2.4&#x00A0;<a 
+href="#x1-210014">Stress-strain
+relations</a></span><br /><span class="lofToc" >a&#x00A0;<a 
+href="#x1-21002r1">Strain=0.00</a></span><br /><span class="lofToc" >b&#x00A0;<a 
+href="#x1-21003r2">Strain=0.04</a></span><br /><span class="lofToc" >c&#x00A0;<a 
+href="#x1-21004r3">Strain=0.07</a></span><br /><span class="lofToc" >d&#x00A0;<a 
+href="#x1-21005r4">Strain=0.10</a></span><br /><span class="lofToc" >2.6&#x00A0;<a 
+href="#x1-210066">Visualization
+of the trajectories during stress-strain simulation</a></span><br />
+   </div>
+                                                                                                  
+                                                                                                  
+   <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;1</span><br /><a 
+ id="x1-30001"></a>Three-dimensional atomistic system</h2>
+<!--l. 132--><p class="noindent" >All files for this task are located in <a 
+href="../../1_three-dimensional_atomic_system" >1_three-dimensional_atomic_system</a><br 
+class="newline" />
+   <h3 class="sectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-40001.1"></a>Determination of lattice constant</h3>
+<!--l. 134--><p class="noindent" >For the determination of the lattice constant and lattice type, 3 different configurations are considered:
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-4002x1">Face-centered cubic (FCC)
+     </li>
+     <li 
+  class="enumerate" id="x1-4004x2">Body-centered cubic (BCC)
+     </li>
+     <li 
+  class="enumerate" id="x1-4006x3">Primitive cubic (PC)</li></ol>
+<!--l. 140--><p class="noindent" >The system will take those configuration, which shows the least total energy per atom. Since interactions happen not only with
+the closes neighbors, but also with other atoms, an simulation has to be performed to get the exact energies. This is done
+below.<br 
+class="newline" />However, a good first approximation can be made analytically by considering the following observations: All atoms within a
+lattice type are equal, meaning that an atom that appears as a center atom in BCC can also be viewed as a corner atom just
+by shifting the connections. Secondly, if one denotes the length of the cube as lattice constant <span 
+class="cmmi-10">a</span>, one can easily determine the
+distances between all atom by simple geometric means.<br 
+class="newline" />By looking only at the closest neighbors, one can derive the following expression for the energy per atom in all 3
+grids:
+<table 
+class="align">
+                                 <tr><td 
+class="align-odd"><span 
+class="cmmi-10">E</span><sub><span 
+class="cmmi-7">FCC</span></sub></td>                                 <td 
+class="align-even"> = 6<span 
+class="cmmi-10">U</span>(<span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">FCC</span></sub>) + 12<span 
+class="cmmi-10">U</span>(<span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">FCC</span></sub><span 
+class="cmmi-10">&#x2215;</span><img 
+src="main0x.png" alt="&#x221A;-
+ 2"  class="sqrt" >)</td>                                                                  <td 
+class="align-label"><a 
+ id="x1-4007r1"></a>(1.1)
+                                 </td></tr><tr><td 
+class="align-odd"><span 
+class="cmmi-10">E</span><sub><span 
+class="cmmi-7">BCC</span></sub></td>                                 <td 
+class="align-even"> = 6<span 
+class="cmmi-10">U</span>(<span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">BCC</span></sub>) + 8<span 
+class="cmmi-10">U</span>(<span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">BCC</span></sub><img 
+src="main1x.png" alt="&#x221A;3"  class="sqrt" ><span 
+class="cmmi-10">&#x2215;</span>2)</td>                                                                  <td 
+class="align-label"><a 
+ id="x1-4008r2"></a>(1.2)
+                                 </td></tr><tr><td 
+class="align-odd"><span 
+class="cmmi-10">E</span><sub><span 
+class="cmmi-7">PC</span></sub></td>                                  <td 
+class="align-even"> = 6<span 
+class="cmmi-10">U</span>(<span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">PC</span></sub>)</td>                                                                                   <td 
+class="align-label"><a 
+ id="x1-4009r3"></a>(1.3)                                 </td></tr></table>
+<!--l. 149--><p class="indent" >   By solving for local minima, the following lattice constants are obtained
+                                                                                                  
+                                                                                                  
+<table 
+class="align">
+                                        <tr><td 
+class="align-odd"><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">FCC,min</span></sub></td>                                        <td 
+class="align-even"> = 5<span 
+class="cmmi-10">.</span>7432<span 
+class="cmmi-10">Å</span></td>                                                                                <td 
+class="align-label"><a 
+ id="x1-4010r4"></a>(1.4)
+                                        </td></tr><tr><td 
+class="align-odd"><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">BCC,min</span></sub></td>                                        <td 
+class="align-even"> = 4<span 
+class="cmmi-10">.</span>6143<span 
+class="cmmi-10">Å</span></td>                                                                                <td 
+class="align-label"><a 
+ id="x1-4011r5"></a>(1.5)
+                                        </td></tr><tr><td 
+class="align-odd"><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">PC,min</span></sub></td>                                         <td 
+class="align-even"> = 4<span 
+class="cmmi-10">.</span>097<span 
+class="cmmi-10">Å</span></td>                                                                                 <td 
+class="align-label"><a 
+ id="x1-4012r6"></a>(1.6)
+                                        </td></tr><tr><td 
+class="align-odd"></td>                                                <td 
+class="align-even"></td>                                                  <td 
+class="align-label"><a 
+ id="x1-4013r7"></a>(1.7)                                                                                </td></tr></table>
+<!--l. 156--><p class="indent" >   Substituting this back in to the equation for the energies per atom, one can see, that the FCC configuration with
+an approximate lattice constant of 5<span 
+class="cmmi-10">.</span>7432<span 
+class="cmmi-10">Å</span> gives the smallest total energy and is therefore the configuration
+obtained.<br 
+class="newline" />
+<!--l. 158--><p class="indent" >   Scripts used for this question: <a 
+href="../../lattice_constant_approximation.m" >lattice_constant_approximation.m</a>
+<!--l. 162--><p class="indent" >   Of course, the lattice constant can also be obtained by simulations. This has been done with the input script
+<a 
+href="../../DIR1/in.latticeconstant" >in.latticeconstant</a>. To run the simulations just call <a 
+href="../../DIR1/run_latticeconstant.sh" >run_latticeconstant.sh</a>.<br 
+class="newline" />The lattice-constant obtained after minimization is 5<span 
+class="cmmi-10">.</span>64<span 
+class="cmmi-10">Å</span>. The minimization process is visualized in Figure&#x00A0;<a 
+href="#x1-40141">1.1<!--tex4ht:ref: fig:p1_latticeconst --></a>.
+<div class="center" 
+>
+<!--l. 165--><p class="noindent" >
+<!--l. 166--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-40141"></a> <span 
+class="cmbx-10">Lattice constant approximation</span>
+
+<!--l. 168--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/latticeconst/PotEng_over_Lx.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/latticeconst/Density_over_Lx.png" alt="PIC"  
+>&#x00A0;
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.1: </span><span  
+class="content">Convergence of Potential energy on the left, Final density value on the right. The final lattice-constant
+determined by the simulation is <span 
+class="cmbx-10">5.640</span> <span 
+class="cmmi-10">Å</span>. </span></div><!--tex4ht:label?: x1-40141 -->
+<!--l. 172--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<!--l. 176--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">1.2   </span> <a 
+ id="x1-50001.2"></a>Constant temperature and molecular dynamics</h3>
+<!--l. 177--><p class="noindent" >Through several simulations, a timestep of 10<span 
+class="cmmi-10">fs </span>has been determined as stable. The input-files for all simulations are
+<a 
+href="../../1_three-dimensional_atomic_system/in.NVT_template" >in.NVT_template</a> for the Noose-Hover thermostat and <a 
+href="../../1_three-dimensional_atomic_system/in.NVEBer_template" >in.NVEBer_template</a> for the &#8221;weak-coupling&#8221; Berendsen
+thermostat.
+<!--l. 179--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">1.2.1   </span> <a 
+ id="x1-60001.2.1"></a>Equilibriation</h4>
+<!--l. 180--><p class="noindent" >For the equilibriation phase, the lattice constant of 5<span 
+class="cmmi-10">.</span>90<span 
+class="cmmi-10">Å</span>, as states on the instruction, has been used. The results are plotted
+in Figure&#x00A0;<a 
+href="#x1-60012">1.2<!--tex4ht:ref: fig:p1_equilibriation --></a>. All relative variances have been calculated after the system has reached equilibrium. The plots show,
+that the weakly coupled Berendsen thermostat capable of delivering the exact temperature value. However,
+while damping helps to reduce the fluctuation in Potential energy, it increases the variance of the temperature
+values. For the NVT thermostat on the other hand, damping can help to reduce fluctuations in all quantities of
+interest.<br 
+class="newline" />From Figure&#x00A0;<a 
+href="#x1-60023">1.3<!--tex4ht:ref: fig:p1_equilibriation_histograms --></a> one can also see, that an increased time-damping parameter decreases the variance of the Total Energy
+results for an Berendsen algorithm, whereas the NVT ensemble can not benefit from that.<br 
+class="newline" />Overall, the weakly-coupled Berendsen thermostat clearly performs superior compared to Nose-Hoover. This claim is also
+supported by the plots provided in Figure&#x00A0;<a 
+href="#x1-70025">1.5<!--tex4ht:ref: fig:p1_NVT_vs_NVEBer_histograms --></a>.
+<div class="center" 
+>
+<!--l. 185--><p class="noindent" >
+                                                                                                  
+                                                                                                  
+<!--l. 186--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-60012"></a> <span 
+class="cmbx-10">Influence of the damping parameter on results - time convergence</span>
+
+<!--l. 188--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVT_Temp_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVEBer_Temp_atomnum500.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVT_PotEng_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVEBer_PotEng_atomnum500.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVT_TotEng_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVEBer_TotEng_atomnum500.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.2:  </span><span  
+class="content">Equilibration  of  Temperature(top),  Potential  Energy(middle)  and  Kinetic  Energy(bottom)  for  the
+Nose-Hoover thermostat(left) and the &#8221;weak-coupling&#8221; thermostat(right). The equilibriation is plotted for different
+damping parameters and the relative variance of the equilibrated part is provided.</span></div><!--tex4ht:label?: x1-60012 -->
+<!--l. 196--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<div class="center" 
+>
+<!--l. 200--><p class="noindent" >
+<!--l. 201--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-60023"></a> <span 
+class="cmbx-10">Influence of the damping parameter on results - histograms</span>
+
+<!--l. 203--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/hist_NVT_Temp_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/hist_NVEBer_Temp_atomnum500.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/hist_NVT_PotEng_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/hist_NVEBer_PotEng_atomnum500.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/hist_NVT_TotEng_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/hist_NVEBer_TotEng_atomnum500.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.3: </span><span  
+class="content">Histograms of the equilibrated Temperatures(top), Potential Energies(middle) and Total Energies(bottom)
+for the NVT ensemble(left) and the Berendsen thermostat(right).</span></div><!--tex4ht:label?: x1-60023 -->
+<!--l. 211--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<!--l. 215--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">1.2.2   </span> <a 
+ id="x1-70001.2.2"></a>Stability comparison between Noose-Hoover and Berendsen</h4>
+<!--l. 216--><p class="noindent" >A comparison between the Nose-Hoover thermostat and the weakly-coupled Berendsen thermostat is provided in Figure&#x00A0;<a 
+href="#x1-70014">1.4<!--tex4ht:ref: fig:p1_NVT_vs_NVEBer --></a>.
+Overall, one can say that the weakly-coupled Berendsen delivers more accurate and stable results. Also, it
+does not benefit from damping, on the contrary, the relative variance increases with an increasing damping
+parameter.
+<div class="center" 
+>
+<!--l. 219--><p class="noindent" >
+<!--l. 220--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-70014"></a> <span 
+class="cmbx-10">Comparisons between Nose-Hoover thermostat and weakly-coupled Berendsen thermostat</span>
+
+<!--l. 222--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp10_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp10_atomnum500.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp100_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp100_atomnum500.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp1000_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp1000_atomnum500.png" alt="PIC"  
+>
+<br />  <div class="caption" 
+><span class="id">Figure&#x00A0;1.4:  </span><span  
+class="content">Comparisons  between  Nose-Hoover  thermostat(blue)  and  weakly-coupled  Berendsen(green)  for
+temperature (left) and Potential Energy(right). The 3 rows show the convergence for 3 different damping parameters.</span></div><!--tex4ht:label?: x1-70014 -->
+<!--l. 230--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<div class="center" 
+>
+<!--l. 234--><p class="noindent" >
+<!--l. 235--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-70025"></a> <span 
+class="cmbx-10">Comparisons between Nose-Hoover thermostat and weakly-coupled Berendsen thermostat</span>
+
+<!--l. 237--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/hist_Temp_damp10_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/hist_PotEng_damp10_atomnum500.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/hist_Temp_damp100_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/hist_PotEng_damp100_atomnum500.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/hist_Temp_damp1000_atomnum500.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/hist_PotEng_damp1000_atomnum500.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.5: </span><span  
+class="content">Ditributions of Temperture(left) and Potential Energy(right) for different damping values(increasing from
+top to bottom) for the Nose-Hover thermostat(blue) and the weakly-coupled Berendsen thermostat (blue). One can
+conclude, that the weakly coupled Berendes thermostat leads to better results, especially for the Temperature it can
+achieve a significantly reduced standard deviation, provided that the timd damping parameter is not too big.</span></div><!--tex4ht:label?: x1-70025 -->
+<!--l. 245--><p class="noindent" ></div><hr class="endfigure">
+</div>
+                                                                                                  
+                                                                                                  
+<!--l. 249--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">1.2.3   </span> <a 
+ id="x1-80001.2.3"></a>Dependence on the system-size</h4>
+<!--l. 250--><p class="noindent" >To determine the dependence of the Nose-Hoover thermostat&#8217;s convergence on the system size, simulations with a box-size of 5,
+6, 7, 8, 9, 10, 11 and 12 have been carried out, which correlates to a total number of atoms of 500, 864, 1372, 2048, 2916, 4000,
+5324 and 6912. The results are visualized in Figure&#x00A0;<a 
+href="#x1-80016">1.6<!--tex4ht:ref: fig:p1_cellnum_study --></a>. It can be observed, that the relative variance decays with the system
+size as <img 
+src="main2x.png" alt="&#x003C;T-2&#x003E;--&#x003C;T&#x003E;2
+   &#x003C;T&#x003E;2"  class="frac" align="middle"> <span 
+class="cmsy-10">~</span><img 
+src="main3x.png" alt="1-
+N"  class="frac" align="middle">.
+<div class="center" 
+>
+<!--l. 252--><p class="noindent" >
+<!--l. 253--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-80016"></a> <span 
+class="cmbx-10">Influence of the atom number on the results quality</span>
+
+<!--l. 255--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/cellnum_study/NVT_Temp_damp10.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/cellnum_study/NVT_PotEng_damp10.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.6: </span><span  
+class="content">Relative variance of Temperature(left) and Potential Energy(right) with respect to the number of atoms
+in the simulation. As the dashed line shows, the relative variance decays with the system size as <img 
+src="main4x.png" alt="   2     2
+&#x003C;T-&#x003E;&#x003C;T-&#x003E;&#x003C;2T&#x003E;-"  class="frac" align="middle"> <span 
+class="cmsy-10">~</span><img 
+src="main5x.png" alt="1N-"  class="frac" align="middle">.</span></div><!--tex4ht:label?: x1-80016 -->
+<!--l. 259--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<!--l. 263--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">1.2.4   </span> <a 
+ id="x1-90001.2.4"></a>MCMC</h4>
+<!--l. 264--><p class="noindent" >The input-file for the MCMC simulations was <a 
+href="../../1_three-dimensional_atomic_system/in.NVT_MCMC" >in.NVT_MCMC</a>, the simulations were run by <a 
+href="../../1_three-dimensional_atomic_system/run_NVT_MCMC.sh" >run_NVT_MCMC.sh</a>, results were
+postprocessed with <a 
+href="../../1_three-dimensional_atomic_system/postprocess_MCMC.sh" >postprocess_MCMC.sh</a> and plotted via <a 
+href="../../1_three-dimensional_atomic_system/plot_MCMC_vs_NVT.py" >plot_MCMC_vs_NVT.py</a>. The results are stored in
+<a 
+href="../../1_three-dimensional_atomic_system/plots/MCMC_vs_NVT/" >plots/MCMC_vs_NVT/</a>.<br 
+class="newline" />A visualization of the Density and Potential Energy results in provided in Figure<a 
+href="#x1-100017">1.7<!--tex4ht:ref: fig:p1_MCMC_vs_NVT --></a>.<br 
+class="newline" />MCMC converges a little bit faster, but other than that neither the relative variance, nor the final distribution obtained are
+different. For this reason, I conclude that in this setup, the performance of MCMC does not justify the significantly increased
+cost.
+<!--l. 269--><p class="noindent" >
+   <h5 class="subsubsectionHead"><a 
+ id="x1-100001.2.4"></a>Difference between MCMC and MD</h5>
+<!--l. 270--><p class="noindent" >Molecular dynamics is based on the solution of simple ODEs of motion for every particle. A time integrator is applied to
+move the system from time <span 
+class="cmmi-10">t</span><sup><span 
+class="cmmi-7">n</span></sup> to <span 
+class="cmmi-10">t</span><sup><span 
+class="cmmi-7">n</span></sup> plus one. The most costly part of MCMC is the evaluation of the force
+on a particle, since all neighbor interactions must be taken into account(up to a defined cutoff radius). Also,
+parallelization is limited, since neighboring regions have to continuously exchange information about the particles on the
+border.<br 
+class="newline" />For MCMC, no neighbor evaluations are required. Instead, every particles position(momenta) is subsequently updated by
+computing the Markov chain. MCMC can be advantageous for very large systems and high dimensions, in the example here, it
+could not utilize its advantages.
+<div class="center" 
+>
+<!--l. 274--><p class="noindent" >
+<!--l. 275--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-100017"></a> <span 
+class="cmbx-10">Comparison between MCMC and NVT-MD</span>
+
+<!--l. 277--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/MCMC_vs_NVT/Press_damp10.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/MCMC_vs_NVT/hist_Press_damp10.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/MCMC_vs_NVT/PotEng_damp10.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/MCMC_vs_NVT/hist_PotEng_damp10.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.7: </span><span  
+class="content">Comparison between MCMC and NVT-MD. Both algorithms deliver very similar results. MCMC converges
+a little bit faster, but other than that neither the relative variance, nor the final distribution obtained are different.</span></div><!--tex4ht:label?: x1-100017 -->
+<!--l. 283--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<!--l. 293--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">1.3   </span> <a 
+ id="x1-110001.3"></a>Constant pressure/temperature molecular dynamics</h3>
+                                                                                                  
+                                                                                                  
+<!--l. 294--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">1.3.1   </span> <a 
+ id="x1-120001.3.1"></a>Finding the equilibrium box sizes</h4>
+<!--l. 295--><p class="noindent" >To determine the equilibrium box sizes, a regular simulation has been conducted and the final, equilibrium
+average has been used as a mean value. This is visualized in Figure&#x00A0;<a 
+href="#x1-120028">1.8<!--tex4ht:ref: fig:p1_boxsize --></a>. By dividing the final box-length by
+the original, one can obtain a scaling factor that is applied to the following simulations via the &#8221;change_box&#8221;
+command(<a 
+href="../../1_three-dimensional_atomic_system/in.NPT_boxmod_template" >in.NPT_boxmod_template</a>). As a verification, the box-size is again plotted over time in the right hand side of
+Figure&#x00A0;<a 
+href="#x1-120028">1.8<!--tex4ht:ref: fig:p1_boxsize --></a>.<br 
+class="newline" />
+<!--l. 298--><p class="indent" >   In Figure&#x00A0;<a 
+href="#x1-120039">1.9<!--tex4ht:ref: fig:pressure_over_boxsize --></a>, the pressure distribution of the scaled simulation is plotted for different box sizes. We can clearly see a
+normal-like distribution centered around the target value of 1.0 atm and a shrinking variance with increasing system
+size.<br 
+class="newline" />The dependency of the relative variance on the number of atoms is also plotted in the bottom two figures. Clearly, the relative
+variance decays inverse proportional with the system size.<br 
+class="newline" /><br 
+class="newline" />From the LAMMPS manual, we can see that the pressure is computes via the formula
+<table 
+class="align">
+                                      <tr><td 
+class="align-odd"><span 
+class="cmmi-10">P </span>= <img 
+src="main6x.png" alt="NkBT--
+ N"  class="frac" align="middle"> + <img 
+src="main7x.png" alt="&#x2211;N &#x2032;
+--i-ri &#x22C5;fi
+   dV"  class="frac" align="middle"></td>                                      <td 
+class="align-even"></td>                                      <td 
+class="align-label"><a 
+ id="x1-12001r8"></a>(1.8)                                      </td></tr></table>
+where <span 
+class="cmmi-10">N </span>is the number of atoms <span 
+class="cmmi-10">k</span><sub><span 
+class="cmmi-7">B</span></sub> is the Boltzmann constant, <span 
+class="cmmi-10">T </span>is the Temperature and <span 
+class="cmmi-10">V </span>is the control volume. The second
+term contains all interactions where <span 
+class="cmmi-10">r</span><sub><span 
+class="cmmi-7">i</span></sub> and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">i</span></sub> are the position vector of atom <span 
+class="cmmi-10">i </span>and dV is the change rate of the control
+volume. Since we are in equilibrium, the control volume remains constant, the second term can thus be neglected.
+Also, in the first term, <img 
+src="main8x.png" alt="NV-"  class="frac" align="middle"> is related to the density and also constant. We can therefore expect the convergence
+to be of the same rate as the convergence of <span 
+class="cmmi-10">T </span>which has already been shown in the first part to be of first
+order.
+<div class="center" 
+>
+<!--l. 308--><p class="noindent" >
+<!--l. 309--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-120028"></a> <span 
+class="cmbx-10">Determination of equilibrated box-size</span>
+
+<!--l. 311--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/NPT_Lx_damp10.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp10.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/NPT_Lx_damp1000.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp1000.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.8: </span><span  
+class="content">Determination of the box-size by equilibriation(left) and Time convergence after box-size modification
+(right). </span></div><!--tex4ht:label?: x1-120028 -->
+<!--l. 317--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<div class="center" 
+>
+<!--l. 321--><p class="noindent" >
+<!--l. 322--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-120039"></a> <span 
+class="cmbx-10">Influence of the system size on the relative variance of pressure results</span>
+
+<!--l. 324--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp10.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp1000.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/relvar_Press_damp10.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/relvar_Press_damp1000.png" alt="PIC"  
+>
+                                                                                                  
+                                                                                                  
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.9: </span><span  
+class="content">Influence of the system size on the simulation. The top two figures show histograms of the obtained
+pressure values, the bottom two figures show the dependency of the relative variance on the system size. The left two
+figures have been calculated with a damping value of 10<span 
+class="cmmi-10">fs </span>the right two with 1000<span 
+class="cmmi-10">fs</span>.</span></div><!--tex4ht:label?: x1-120039 -->
+<!--l. 330--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<div class="center" 
+>
+<!--l. 334--><p class="noindent" >
+<!--l. 335--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-1200410"></a> <span 
+class="cmbx-10">Density results over box-size</span>
+
+<!--l. 337--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Density_damp10.png" alt="PIC"  
+>&#x00A0;
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.10: </span><span  
+class="content">Density results as a function of the simulation box size. Clearly, the reference density is very well
+approximated. On should also take into account, that the 275<span 
+class="cmmi-10">.</span>15<span 
+class="cmmi-10">&#x00A0;K </span>that the instruction requires is slightly higher
+than the <span 
+class="cmsy-10">&#x2218;</span><span 
+class="cmmi-10">C </span>that the provided reference value is based upon.</span></div><!--tex4ht:label?: x1-1200410 -->
+<!--l. 340--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<!--l. 349--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">1.3.2   </span> <a 
+ id="x1-130001.3.2"></a>Evaluation of CV</h4>
+<!--l. 351--><p class="noindent" >
+   <h5 class="subsubsectionHead"><a 
+ id="x1-140001.3.2"></a>Equilibration</h5>
+<!--l. 352--><p class="noindent" >First, the system has been equilibrated under NPT ensemble as required in the instructions. The plots, confirming that
+equilibrium has been reached are shown in Figure&#x00A0;<a 
+href="#x1-1600111">1.11<!--tex4ht:ref: fig:p1_CV_equi_NPT --></a>.<br 
+class="newline" />The input-file for this task was <a 
+href="../../1_three-dimensional_atomic_system/in.CV_equi" >in.CV_equi</a>.
+<!--l. 356--><p class="noindent" >
+   <h5 class="subsubsectionHead"><a 
+ id="x1-150001.3.2"></a>Estimation of box length</h5>
+<!--l. 357--><p class="noindent" >The equilibrium box-length estimation under NPT ensemble in visualized in Figure&#x00A0;<a 
+href="#x1-1600212">1.12<!--tex4ht:ref: fig:p1_CV_equi_NPT_lx --></a>. The equilibrium box length value
+calculates to 601<span 
+class="cmmi-10">&#x00A0;</span><span 
+class="cmmi-10">Å</span>. The input-file for this task was <a 
+href="../../1_three-dimensional_atomic_system/in.CV_equi" >in.CV_equi</a>.
+<!--l. 360--><p class="noindent" >
+   <h5 class="subsubsectionHead"><a 
+ id="x1-160001.3.2"></a>Equilibriation under NVT-ensemble</h5>
+<!--l. 361--><p class="noindent" >From the previous simulations we obtain a lattice size of 54<span 
+class="cmmi-10">.</span>64<span 
+class="cmmi-10">&#x00A0;</span><span 
+class="cmmi-10">Å</span>, which corresponds to a scaling factor of 9<span 
+class="cmmi-10">.</span>26 w.r.t the
+original box length of 5<span 
+class="cmmi-10">.</span>9<span 
+class="cmmi-10">&#x00A0;</span><span 
+class="cmmi-10">Å</span>.<br 
+class="newline" />This scaling factor has been used in the input file for the following simulations The input-file for this task was
+<a 
+href="../../1_three-dimensional_atomic_system/in.CV_NVT" >in.CV_NVT</a>.
+<div class="center" 
+>
+<!--l. 364--><p class="noindent" >
+<!--l. 365--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-1600111"></a> <span 
+class="cmbx-10">equilibriation under NPT ensemble</span>
+
+<!--l. 367--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/equi_TotEng.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_TotEng.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/equi_Temp.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_Temp.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/equi_Press.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_Press.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.11:  </span><span  
+class="content">Equilibriation  of  the  system  under  NPT-Ensemble.  The  left  part  shows  the  development  of
+thermodynamic quantities over time, the right figures show the distribution of those quantities after equilibration
+has been reached. Both the target Temperature and target Pressure have been reached with an acceptable standard
+deviation.</span></div><!--tex4ht:label?: x1-1600111 -->
+<!--l. 375--><p class="noindent" ></div><hr class="endfigure">
+</div>
+                                                                                                  
+                                                                                                  
+<div class="center" 
+>
+<!--l. 378--><p class="noindent" >
+<!--l. 379--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-1600212"></a> <span 
+class="cmbx-10">Equilibrium box-length estimation under NPT-ensemle</span>
+
+<!--l. 381--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/equi_Lx.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_Lx.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.12: </span><span  
+class="content">Estimation of the equilibrium Box length under the NPT ensemble. An equilibrated value of 601<span 
+class="cmmi-10">&#x00A0;</span><span 
+class="cmmi-10">Å</span> is
+obtained with a standard deviation of 2<span 
+class="cmmi-10">.</span>48<span 
+class="cmmi-10">Å</span>.</span></div><!--tex4ht:label?: x1-1600212 -->
+<!--l. 385--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<!--l. 389--><p class="noindent" >
+   <h5 class="subsubsectionHead"><a 
+ id="x1-170001.3.2"></a>Estimation of specific heat capacity</h5>
+<!--l. 390--><p class="noindent" >The specific heat capacity <span 
+class="cmmi-10">C</span><sub><span 
+class="cmmi-7">v</span></sub> = <img 
+src="main9x.png" alt="(  )
+ &#x2202;&#x2202;ET-"  class="left" align="middle"><sub><span 
+class="cmmi-7">V,N</span></sub> can, according to the instruction be written as a function of the total energy
+variance: <span 
+class="cmmi-10">C</span><sub><span 
+class="cmmi-7">v</span></sub> = <img 
+src="main10x.png" alt="&#x003C;E2k&#x003E;B-*&#x003C;TE2&#x003E;2"  class="frac" align="middle">.<br 
+class="newline" />This formula was used in the first part of <a 
+href="../../1_three-dimensional_atomic_system/calc_CV.py" >calc_CV.py</a> and gave an approximation of <span class="underline"><span 
+class="cmmi-10">C</span><sub><span 
+class="cmmi-7">v</span></sub> <span 
+class="cmsy-10">~</span>= 0<span 
+class="cmmi-10">.</span>1549<span 
+class="cmmi-10">&#x00A0;</span><img 
+src="main11x.png" alt="-kJ-
+kgK"  class="frac" align="middle"></span>. However, one can also
+get a good approximation of <span 
+class="cmmi-10">C</span><sub><span 
+class="cmmi-7">V</span> </sub> by using a finite difference approach. I did a central difference around 300<span 
+class="cmmi-10">.</span>15<span 
+class="cmmi-10">&#x00A0;K </span>with a stencil
+width of 1<span 
+class="cmmi-10">&#x00A0;K </span>and obtained a value of <span class="underline"><span 
+class="cmmi-10">C</span><sub><span 
+class="cmmi-7">v,FD</span></sub> <span 
+class="cmsy-10">~</span>= 0<span 
+class="cmmi-10">.</span>1516<span 
+class="cmmi-10">&#x00A0;</span><img 
+src="main12x.png" alt="-kJ-
+kgK"  class="frac" align="middle"></span>.<br 
+class="newline" />Both values are nearly identical and coincide perfectly with values from the literature.<br 
+class="newline" />The input-files for this task were <a 
+href="../../1_three-dimensional_atomic_system/in.CV_NVT_plus" >in.CV_NVT_plus</a>, post-processing was done via <a 
+href="../../1_three-dimensional_atomic_system/postprocess_NVT.sh" >postprocess_NVT.sh</a> and the finite difference
+approximation was carried out via <a 
+href="../../1_three-dimensional_atomic_system/calc_CV.py" >calc_CV.py</a>.
+<!--l. 405--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">1.4   </span> <a 
+ id="x1-180001.4"></a>Phase transition of Krypton</h3>
+<!--l. 408--><p class="noindent" >For the phase transition analysis, simulations between 25<span 
+class="cmmi-10">&#x00A0;K </span>and 230<span 
+class="cmmi-10">&#x00A0;K </span>have been carried out with a temperature-step of
+1<span 
+class="cmmi-10">&#x00A0;K</span>. Each time the final configuration is written to a file and read by the subsequent simulation as a initial
+configuration.<br 
+class="newline" />The input-files are <a 
+href="../../1_three-dimensional_atomic_system/in.phasetrans" >in.phasetrans</a> for the first simulation and <a 
+href="../../1_three-dimensional_atomic_system/in.phasetrans_template" >in.phasetrans_template</a> for all following.<br 
+class="newline" />The results are post-processed via <a 
+href="../../1_three-dimensional_atomic_system/postprocess_phasetrans.py" >postprocess_phasetrans.py</a> and plotted via <a 
+href="../../1_three-dimensional_atomic_system/plot_phasetrans.py" >plot_phasetrans.py</a>.<br 
+class="newline" />For the non-dimensionalization, the equilibrium box length is read from the log-file for each temperature.<br 
+class="newline" />Figure&#x00A0;<a 
+href="#x1-1800113">1.13<!--tex4ht:ref: fig:p1_phasetransition_dens --></a> show the equilibrated density as a function of the equilibrated temperature. Two phase transitions at <span 
+class="cmsy-10">~ </span>130<span 
+class="cmmi-10">&#x00A0;K</span>
+and <span 
+class="cmsy-10">~ </span>177<span 
+class="cmmi-10">&#x00A0;K</span>.<br 
+class="newline" />The trajectories during the transitions are visualized in Figure&#x00A0;<a 
+href="#x1-1800615">1.15<!--tex4ht:ref: fig:p1_phasetransitions_snapshots --></a>.
+<div class="center" 
+>
+<!--l. 417--><p class="noindent" >
+<!--l. 418--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-1800113"></a> <span 
+class="cmbx-10">Phase transition of Krypton under NPT ensemble</span>
+
+<!--l. 420--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/phasetrans/Density.png" alt="PIC"  
+><br 
+class="newline" /><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/phasetrans/detail1/Density.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/phasetrans/detail2/Density.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.13: </span><span  
+class="content">Phase transition analysis of Krypton in NPT ensemble. Simulations have been carried out every 1<span 
+class="cmmi-10">&#x00A0;K</span>.
+As the first graph shows, we get 2 distinct phase transitions. The two graphs below show the transitions in greater
+detail. One can conclude, that the melting occurs at <span 
+class="cmsy-10">~ </span>130<span 
+class="cmmi-10">&#x00A0;K</span>, and Boiling at <span 
+class="cmsy-10">~ </span>177<span 
+class="cmmi-10">&#x00A0;K</span>.</span></div><!--tex4ht:label?: x1-1800113 -->
+<!--l. 428--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<div class="center" 
+>
+<!--l. 432--><p class="noindent" >
+<!--l. 433--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-1800615"></a> <span 
+class="cmbx-10">Visualization of the trajectories during the phase transitions</span>
+<!--l. 435--><p class="noindent" ><!--l. 436--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/phasetrans/temp130.png" alt="PIC"  
+> <a 
+ id="x1-18002r1"></a>
+<span 
+class="cmmi-9">T </span><span 
+class="cmr-9">= 130</span><span 
+class="cmmi-9">&#x00A0;K</span>
+&#x00A0; <!--l. 440--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/phasetrans/temp131.png" alt="PIC"  
+> <a 
+ id="x1-18003r2"></a>
+<span 
+class="cmmi-9">T </span><span 
+class="cmr-9">= 131</span><span 
+class="cmmi-9">&#x00A0;K</span>
+                                                                                                  
+                                                                                                  
+<!--l. 444--><p class="noindent" >
+<!--l. 445--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/phasetrans/temp177.png" alt="PIC"  
+> <a 
+ id="x1-18004r3"></a>
+<span 
+class="cmmi-9">T </span><span 
+class="cmr-9">= 177</span><span 
+class="cmmi-9">&#x00A0;K</span>
+&#x00A0; <!--l. 449--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/phasetrans/temp178.png" alt="PIC"  
+> <a 
+ id="x1-18005r4"></a>
+<span 
+class="cmmi-9">T </span><span 
+class="cmr-9">= 178</span><span 
+class="cmmi-9">&#x00A0;K</span>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1.15: </span><span  
+class="content">Visualization of the trajectories during the phase transitions at four different Temperatures. The top
+two figures show the melting process around 130<span 
+class="cmmi-10">&#x00A0;K</span>, the bottom two figures show the boiling around 177<span 
+class="cmmi-10">&#x00A0;K</span>. Please
+note that the box-size are not up to scale from one figure to another. Instead, one can use the atom size as a reference
+for the total system size.</span></div><!--tex4ht:label?: x1-1800615 -->
+<!--l. 454--><p class="noindent" ></div><hr class="endfigure">
+</div>
+                                                                                                  
+                                                                                                  
+                                                                                                  
+                                                                                                  
+   <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;2</span><br /><a 
+ id="x1-190002"></a>Two-dimensional atomistic tensile test</h2>
+<!--l. 469--><p class="noindent" >All files for this task are located in <a 
+href="../../2_Two-dimensional_atomic_tensile_test" >2_Two-dimensional_atomic_tensile_test</a><br 
+class="newline" />
+   <h3 class="sectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x1-200002.1"></a>Equilibriation</h3>
+<!--l. 471--><p class="noindent" >First, a system of 30 <span 
+class="cmsy-10">&#x00D7; </span>30 <span 
+class="cmsy-10">&#x00D7; </span>1 cells has been set up and equilibrated under Nose-barostat. Several different computations of
+<span 
+class="cmmi-10">T</span><sub><span 
+class="cmmi-7">damp</span></sub> and <span 
+class="cmmi-10">p</span><sub><span 
+class="cmmi-7">damp</span></sub> have been used to determine the influence of both. The input file was <a 
+href="../../2_Two-dimensional_atomic_tensile_test\in .equi_template" >in.equi_template</a>. The influence of the
+damping parameters on the equilibriation of the Potential Energy is visualized in Figure&#x00A0;<a 
+href="#x1-200022">2.2<!--tex4ht:ref: fig:p2_dampstudy_PotEng --></a>. First of all, if the damping
+parameter, particularly the pressure damping parameter, is chosen too low, the simulation becomes unstable and crashes. This
+was e.g. the case for <span 
+class="cmmi-10">p</span><sub><span 
+class="cmmi-7">damp</span></sub> = 10<span 
+class="cmmi-10">&#x00A0;fs</span>.<br 
+class="newline" />What is more, the graph shows, that the choice of <span 
+class="cmmi-10">T</span><sub><span 
+class="cmmi-7">damp</span></sub> effects the convergence properties. The value should not be chosen
+too small. The choice of <span 
+class="cmmi-10">p</span><sub><span 
+class="cmmi-7">damp</span></sub> on the other hand, seems not to influence the convergence of the potential energy greatly, as
+long as it is choses such that the simulation is stable.<br 
+class="newline" />Additionally, the convergence of the system Temperature w.r.t the damping parameters is provided in Figure&#x00A0;<a 
+href="#x1-200022">2.2<!--tex4ht:ref: fig:p2_dampstudy_PotEng --></a>.<br 
+class="newline" />One can observe, that a too big choice of <span 
+class="cmmi-10">T</span><sub><span 
+class="cmmi-7">damp</span></sub> leads to spurious oscillations at the beginning of the simulations and periodic
+oscillations even in the equilibrated regime.<br 
+class="newline" />
+<!--l. 478--><p class="indent" >   Based on Figures&#x00A0;<a 
+href="#x1-200022">2.2<!--tex4ht:ref: fig:p2_dampstudy_PotEng --></a> and <span 
+class="cmbx-10">??</span> the following choice is made: <span 
+class="cmmi-10">T</span><sub><span 
+class="cmmi-7">damp</span></sub> = 100<span 
+class="cmmi-10">&#x00A0;fs</span>, <span 
+class="cmmi-10">p</span><sub><span 
+class="cmmi-7">damp</span></sub> = 100<span 
+class="cmmi-10">&#x00A0;fs</span>. The equilibrium
+configuration is plotted in Figure&#x00A0;<a 
+href="#x1-200033">2.3<!--tex4ht:ref: fig:p2_equi_ovito --></a>.
+<div class="center" 
+>
+<!--l. 481--><p class="noindent" >
+<!--l. 482--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-200011"></a> <span 
+class="cmbx-10">Determination of appropriate damping parameters - Potential Energy</span>
+
+<!--l. 484--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp30.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp10.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp100.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp100.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp1000.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp1000.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;2.1: </span><span  
+class="content">Influence of the damping parameters on the convergence of the potential energy. The plots on the left show
+a variation of <span 
+class="cmmi-10">T</span><sub><span 
+class="cmmi-7">damp</span></sub> under constant values of <span 
+class="cmmi-10">p</span><sub><span 
+class="cmmi-7">damp</span></sub>, the plots on the left show a variation of <span 
+class="cmmi-10">p</span><sub><span 
+class="cmmi-7">damp</span></sub> under constant
+values of <span 
+class="cmmi-10">T</span><sub><span 
+class="cmmi-7">damp</span></sub>.</span></div><!--tex4ht:label?: x1-200011 -->
+<!--l. 492--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<div class="center" 
+>
+<!--l. 495--><p class="noindent" >
+<!--l. 496--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-200022"></a> <span 
+class="cmbx-10">Determination of appropriate damping parameters - Temperature</span>
+
+<!--l. 498--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp30.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp10.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp100.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp100.png" alt="PIC"  
+> <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp1000.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp1000.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;2.2: </span><span  
+class="content">Influence of the damping parameters on the convergence of the system temperature. The plots on the
+left show a variation of <span 
+class="cmmi-10">T</span><sub><span 
+class="cmmi-7">damp</span></sub> under constant values of <span 
+class="cmmi-10">p</span><sub><span 
+class="cmmi-7">damp</span></sub>, the plots on the left show a variation of <span 
+class="cmmi-10">p</span><sub><span 
+class="cmmi-7">damp</span></sub> under
+constant values of <span 
+class="cmmi-10">T</span><sub><span 
+class="cmmi-7">damp</span></sub>.</span></div><!--tex4ht:label?: x1-200022 -->
+<!--l. 506--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<div class="center" 
+>
+<!--l. 510--><p class="noindent" >
+<!--l. 511--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-200033"></a> <span 
+class="cmbx-10">System snapshots of the 2D system during equilibriation</span>
+
+<!--l. 513--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/dump/equi/initial.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/dump/equi/equilibrium.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;2.3: </span><span  
+class="content">Initial(left) and equilibriated configuration(right) of the 2D-Krypton system. The atom radius is up to
+scale.</span></div><!--tex4ht:label?: x1-200033 -->
+<!--l. 517--><p class="noindent" ></div><hr class="endfigure">
+</div>
+                                                                                                  
+                                                                                                  
+<!--l. 522--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x1-210002.2"></a>Tensile test</h3>
+<!--l. 523--><p class="noindent" >Based on the considerations before, the tensilte test was conducted with damping parameters of <span 
+class="cmmi-10">T</span><sub><span 
+class="cmmi-7">damp</span></sub> = 100<span 
+class="cmmi-10">&#x00A0;fd </span>and
+<span 
+class="cmmi-10">p</span><sub><span 
+class="cmmi-7">damp</span></sub> = 100<span 
+class="cmmi-10">&#x00A0;fs</span>.<br 
+class="newline" />The input file for the tensile-test was <a 
+href="../../2_Two-dimensional_atomic_tensile_test/in.tensiletest" >in.tensiletest</a>, the results were plotted via <a 
+href="../../2_Two-dimensional_atomic_tensile_test/plot_tensiletest.py" >plot_tensiletest.py</a>.<br 
+class="newline" />The results of the tensile test are visualized in Figure&#x00A0;<a 
+href="#x1-210014">2.4<!--tex4ht:ref: fig:p2_stress_strain_relation --></a>.
+<div class="center" 
+>
+<!--l. 531--><p class="noindent" >
+<!--l. 532--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-210014"></a> <span 
+class="cmbx-10">Stress-strain relations</span>
+
+<!--l. 534--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/stressx_strain.png" alt="PIC"  
+>&#x00A0; <img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/stressy_strain.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;2.4: </span><span  
+class="content">Stress in x-direction(left) and y-direction(right) as a function of the strain in x-direction. A clear point
+of material failure can be observed </span></div><!--tex4ht:label?: x1-210014 -->
+<!--l. 538--><p class="noindent" ></div><hr class="endfigure">
+</div>
+<div class="center" 
+>
+<!--l. 542--><p class="noindent" >
+<!--l. 543--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-210066"></a> <span 
+class="cmbx-10">Visualization of the trajectories during stress-strain simulation</span>
+<!--l. 545--><p class="noindent" ><!--l. 546--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/tensiletest/step0.png" alt="PIC"  
+> <a 
+ id="x1-21002r1"></a>
+<span 
+class="cmr-9">Strain=0.00</span>
+&#x00A0; <!--l. 550--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/tensiletest/step80.png" alt="PIC"  
+> <a 
+ id="x1-21003r2"></a>
+<span 
+class="cmr-9">Strain=0.04</span>
+<!--l. 554--><p class="noindent" >
+<!--l. 555--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/tensiletest/step150.png" alt="PIC"  
+> <a 
+ id="x1-21004r3"></a>
+<span 
+class="cmr-9">Strain=0.07</span>
+&#x00A0; <!--l. 559--><p class="noindent" ><img 
+src="/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/tensiletest/step200.png" alt="PIC"  
+> <a 
+ id="x1-21005r4"></a>
+<span 
+class="cmr-9">Strain=0.10</span>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;2.6: </span><span  
+class="content">The figure shows 4 snapshots of the system for 4 different strain values. All snapshots show equilibrated
+systems. The visulalization coincides perfectly with Figure&#x00A0;<a 
+href="#x1-210014">2.4<!--tex4ht:ref: fig:p2_stress_strain_relation --></a>, that suggests a critical strain of 0<span 
+class="cmmi-10">.</span>035.</span></div><!--tex4ht:label?: x1-210066 -->
+<!--l. 566--><p class="noindent" ></div><hr class="endfigure">
+</div>
+    
+</body></html> 
+
+                                                                                                  
+                                                                                                  
+                                                                                                  
+
+

@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # print(atomnums)
     print(dampvals)
 
-    thermostats    =['NVT','MCMC']
+    thermostats    =['NVTstep','MCMC']
     thermostatnames=['Nose-Hoover MD','MCMC']
     quantities   =['PotEng',                      'Press',         'Temp',           'KinEng',                    'TotEng']
     quantitynames=['Potential Energy [Kcal/mole]','Pressure [atm]','Temperature [K]','Kinetic Energy [Kcal/mole]','Total Energy [Kcal/mole]']
@@ -42,7 +42,7 @@ if __name__ == "__main__":
                     relvar = relvariance_nparray(cut_nparray(ydata))
                     varianceavals.append(relvar)
                     plt.plot(time,ydata,label="ensemble: "+ensemble+" rel. var.:"+"{:.2E}".format( relvar ))
-                    plt.xlabel('Time[fs]')
+                    plt.xlabel('Step number')
                     plt.ylabel(quantityname)
                 plt.legend(loc='lower right')
                 plt.title('Convergence '+quantityname+', Tdamp='+dampval+'[fs]')

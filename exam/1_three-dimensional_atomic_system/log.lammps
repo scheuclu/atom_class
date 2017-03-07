@@ -33,7 +33,7 @@ Created orthogonal box = (0 0 0) to (70.8 70.8 70.8)
 create_atoms    1 box
 Created 6912 atoms
 # in the case one wants enforce velocities right in the beginning
-#create_atoms   1 random 180 458887 box
+#create_atoms   1 random 300 458887 box
 # if needed for bigger systems: replicate unit cell
 replicate       1 1 1
   orthogonal box = (0 0 0) to (70.8 70.8 70.8)
@@ -79,7 +79,8 @@ velocity all create 180 12345 mom yes rot no
 
 # thermostat integration for simulating the desired ensemble
 # integration on Nose-Hoover hamiltionian equations of motion
-fix 1 all nvt temp 180 180 1000
+fix 1 all nve
+fix 2 all temp/berendsen 180 180 1000
 # FOR BERENDSEN
 # fix 1 all nve
 # fix 2 all temp/berendsen 180 180 1000
@@ -90,7 +91,7 @@ thermo 20
 thermo_style custom step time lx ly lz press density pxx pyy pzz pe temp pe ke etotal
 
 # dump command for writing the trajectories for every N=250 steps
-dump 1 all atom 500 ./dump/dump.NVT_damp1000_cellnum12_*.atom
+dump 1 all atom 500 ./dump/dump.NVEBer_damp1000_cellnum12_*.atom
 
 # Run for the simulation for desired amount of timesteps until equilibration
-log ./logfiles/log.NVT_damp1000_cellnum12
+log ./logfiles/log.NVEBer_damp1000_cellnum12

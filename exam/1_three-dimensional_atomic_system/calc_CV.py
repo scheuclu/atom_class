@@ -19,32 +19,34 @@ if __name__ == "__main__":
     Nb = 6.022*pow(10,23)
     kb = 1.38065*pow(10,-26) #[KJ/K]
     m  = 0.083798*5324/Nb
+    totalmass  = 0.083798*5324/Nb #[kg]
+    totalmoles = 5324/Nb
+
+    # CALCULATION VIA ENERGY VARIANCE
     infile_E = './results/CV/NVT_TotEng.txt'
     infile_T = './results/CV/NVT_Temp.txt'
 
-
     Evals = np.loadtxt(infile_E, delimiter=' ', usecols=(1,), unpack=True, dtype=float)
     Evals = cut_nparray(Evals)
-
     Tvals = np.loadtxt(infile_T, delimiter=' ', usecols=(1,), unpack=True, dtype=float)
     Tvals = cut_nparray(Tvals)
 
-    Evals=Evals*5324/(Nb)*4.184*0.0837 #conversion to KJoule
+    # Evals=Evals*5324/(Nb)*4.184*0.0837 #conversion to KJoule
+    Evals=Evals*totalmoles/5324#[kcal
+    Evals=Evals*4.184      #[KJ]
 
     Eavg=np.average(Evals)
     Tavg=np.average(Tvals)
 
-    Cv=(np.average(Evals*Evals)-Eavg*Eavg)/(kb*Tavg*Tavg)
+    Cv=(np.average(Evals*Evals)-Eavg*Eavg)/(kb*Tavg*Tavg)*1/totalmass
     print("Cv = "+str(Cv))
 
-
-
     
+    # FINITE DIFFERENCE APPROACH
     infile_Ep = './results/CV/NVT_plus_TotEng.txt'
     infile_Em = './results/CV/NVT_minus_TotEng.txt'
     infile_Tp = './results/CV/NVT_plus_Temp.txt'
     infile_Tm = './results/CV/NVT_minus_Temp.txt'
-
 
     Evalsp = np.loadtxt(infile_Ep, delimiter=' ', usecols=(1,), unpack=True, dtype=float)
     Evalsp = cut_nparray(Evalsp)
@@ -68,6 +70,6 @@ if __name__ == "__main__":
     print(Tavgp)
     print(Tavgm)
 
-
+    Cv_fd=(Eavgp-Eavgm)/(Tavgp-Tavgm)*4.19/0.083798*1/5324
     print("Cv_fd ="+str((Eavgp-Eavgm)/(Tavgp-Tavgm)*4.19/0.083798*1/5324))
 

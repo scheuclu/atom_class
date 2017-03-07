@@ -115,10 +115,6 @@ s2_5, solid\\%
 	\vspace{2cm}
 	{\Large\itshape Lukas Scheucher\par}
 	\vfill
-%	supervised by\par
-%	Dr.~Mark \textsc{Brown}
-
-	\vfill
 
 % Bottom of the page
 	{\large \today\par}
@@ -133,6 +129,8 @@ s2_5, solid\\%
 \listoffigures
 
 \chapter{Three-dimensional atomistic system}
+All files for this task are located in \href{\pathpartone}{1\_three-dimensional\_atomic\_system}\\
+\section{Determination of lattice constant}
 For the determination of the lattice constant and lattice type, 3 different configurations are considered:
 \begin{enumerate}
 \item Face-centered cubic (FCC)
@@ -180,19 +178,36 @@ Through several simulations, a timestep of $10 fs$ has been determined as stable
 
 \subsection{Equilibriation}
 For the equilibriation phase, the lattice constant of $5.90 \AA$, as states on the instruction, has been used. The results are plotted in Figure~\ref{fig:p1_equilibriation}. All relative variances have been calculated after the system has reached equilibrium. The plots show, that the weakly coupled Berendsen thermostat capable of delivering the exact temperature value. However, while damping helps to reduce the fluctuation in Potential energy, it increases the variance of the temperature values. For the NVT thermostat on the other hand, damping can help to reduce fluctuations in all quantities of interest.\\
-Overall, the weakly-coupled Berendsen thermostat clearly performs superior compared to Nose-Hoover.
+From Figure~\ref{fig:p1_equilibriation_histograms} one can also see, that an increased time-damping parameter decreases the variance of the Total Energy results for an Berendsen algorithm, whereas the NVT ensemble can not benefit from that.\\
+Overall, the weakly-coupled Berendsen thermostat clearly performs superior compared to Nose-Hoover. This claim is also supported by the plots provided in Figure~\ref{fig:p1_NVT_vs_NVEBer_histograms}.
+
 
 \begin{center}
 \begin{figure}[h]
-\figuretitle{Influence of the damping parameter on relative variance of results}
+\figuretitle{Influence of the damping parameter on results - time convergence}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVT_Temp_atomnum500.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVEBer_Temp_atomnum500.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVT_PotEng_atomnum500.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVEBer_PotEng_atomnum500.png}
-\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVT_KinEng_atomnum500.png}~
-\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVEBer_KinEng_atomnum500.png}
-\caption[Influence of the damping parameter on relative variance of results]{Equilibration of Temperature(top), Potential Energy(middle) and Kinetic Energy(bottom) for the Nose-Hoover thermostat(left) and the "weak-coupling" thermostat(right). The equilibriation is plotted for different damping parameters and the relative variance of the equilibrated part is provided.}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVT_TotEng_atomnum500.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVEBer_TotEng_atomnum500.png}
+\caption[Influence of the damping parameter on results - time convergence]{Equilibration of Temperature(top), Potential Energy(middle) and Kinetic Energy(bottom) for the Nose-Hoover thermostat(left) and the "weak-coupling" thermostat(right). The equilibriation is plotted for different damping parameters and the relative variance of the equilibrated part is provided.}
 \label{fig:p1_equilibriation}
+\end{figure}
+\end{center}
+
+
+\begin{center}
+\begin{figure}[h]
+\figuretitle{Influence of the damping parameter on results - histograms}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/hist_NVT_Temp_atomnum500.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/hist_NVEBer_Temp_atomnum500.png}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/hist_NVT_PotEng_atomnum500.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/hist_NVEBer_PotEng_atomnum500.png}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/hist_NVT_TotEng_atomnum500.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/hist_NVEBer_TotEng_atomnum500.png}
+\caption[Influence of the damping parameter on results - histograms]{Histograms of the equilibrated Temperatures(top), Potential Energies(middle) and Total Energies(bottom) for the NVT ensemble(left) and the Berendsen thermostat(right).}
+\label{fig:p1_equilibriation_histograms}
 \end{figure}
 \end{center}
 
@@ -210,8 +225,23 @@ Overall, one can say that the weakly-coupled Berendsen delivers more accurate an
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/PotEng_damp100_atomnum500.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/Temp_damp1000_atomnum500.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/PotEng_damp1000_atomnum500.png}
-\caption[Comparisons between Nose-Hoover thermostat and weakly-coupled Berendsen thermostat]{Comparisons between Nose-Hoover thermostat(blue) and weakly-coupled Berendsen(green) for temperature (left) and Potential Energy(right). The 3 rows show the convergence for 3 different damping parameters.}
+\caption[Comparisons between Nose-Hoover thermostat and weakly-coupled Berendsen thermostat - time convergence]{Comparisons between Nose-Hoover thermostat(blue) and weakly-coupled Berendsen(green) for temperature (left) and Potential Energy(right). The 3 rows show the convergence for 3 different damping parameters.}
 \label{fig:p1_NVT_vs_NVEBer}
+\end{figure}
+\end{center}
+
+
+\begin{center}
+\begin{figure}[h]
+\figuretitle{Comparisons between Nose-Hoover thermostat and weakly-coupled Berendsen thermostat}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/hist_Temp_damp10_atomnum500.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/hist_PotEng_damp10_atomnum500.png}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/hist_Temp_damp100_atomnum500.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/hist_PotEng_damp100_atomnum500.png}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/hist_Temp_damp1000_atomnum500.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/hist_PotEng_damp1000_atomnum500.png}
+\caption[Comparisons between Nose-Hoover thermostat and weakly-coupled Berendsen thermostat - histograms]{Ditributions of Temperture(left) and Potential Energy(right) for different damping values(increasing from top to bottom) for the Nose-Hover thermostat(blue) and the weakly-coupled Berendsen thermostat (blue). One can conclude, that the weakly coupled Berendes thermostat leads to better results, especially for the Temperature it can achieve a significantly reduced standard deviation, provided that the timd damping parameter is not too big.}
+\label{fig:p1_NVT_vs_NVEBer_histograms}
 \end{figure}
 \end{center}
 
@@ -272,7 +302,7 @@ From the LAMMPS manual, we can see that the pressure is computes via the formula
 \begin{align}
 P=\frac{N k_B T}{N}+\frac{\sum_i^{N'}r_i\cdot f_i}{dV}
 \end{align}
-where $N$ is the number of atoms $k_B$ is the Boltzmann constant, $T$ is the Temperature and $V$ is the control volume. The second term contains all interactions where $r_i$ and $f_i$ are the position vector if atom $i$ and dV is the change rate of the control volume. Since we are in equilibrium, the control volume remains constant, the second term can thus be neglected. Also, in the first term, $\frac{N}{V}$ is related to the density and also constant. We can therefore expect the convergence to be of the same rate as the convergence of $T$ which has already been shown in the first part to be of first order.
+where $N$ is the number of atoms $k_B$ is the Boltzmann constant, $T$ is the Temperature and $V$ is the control volume. The second term contains all interactions where $r_i$ and $f_i$ are the position vector of atom $i$ and dV is the change rate of the control volume. Since we are in equilibrium, the control volume remains constant, the second term can thus be neglected. Also, in the first term, $\frac{N}{V}$ is related to the density and also constant. We can therefore expect the convergence to be of the same rate as the convergence of $T$ which has already been shown in the first part to be of first order.
 
 
 \begin{center}
@@ -357,9 +387,11 @@ This scaling factor has been used in the input file for the following simulation
 
 
 \subsubsection{Estimation of specific heat capacity}
-The specific heat capacity $C_v=\left(\frac{\partial E}{\partial T}\right)_{V,N}$ can, according to the instruction be written as a function of the total energy variance: $C_v=\frac{<E^2>-<E>^2}{k_B*T^2}$. I, however had problems with this formula. Even a short dimension analysis doesn't fit: $\frac{ {(kJ)}^2     }{ (\frac{kJ}{K}) {(K)}^2 } \neq \frac{kJ}{kg K}$.
+The specific heat capacity $C_v=\left(\frac{\partial E}{\partial T}\right)_{V,N}$ can, according to the instruction be written as a function of the total energy variance: $C_v=\frac{<E^2>-<E>^2}{k_B*T^2}$.\\
+This formula was used in the first part of \href{\pathpartone/calc_CV.py}{calc\_CV.py} and gave an approximation of $\underline{C_v \sim=0.1549~\frac{kJ}{kg K}}$.
 However, one can also get a good approximation of $C_V$ by using a finite difference approach.
-I did a central difference around $300.15~K$ with a stencil width of $1~K$ and obtained a value of $0.1516~\frac{kJ}{kg K}$, which coincides perfectly with the literature.
+I did a central difference around $300.15~K$ with a stencil width of $1~K$ and obtained a value of $\underline{C_{v,FD} \sim=0.1516~\frac{kJ}{kg K}}$.\\
+Both values are nearly identical and coincide perfectly with values from the literature.\\
 The input-files for this task were \href{\pathpartone/in.CV_NVT_plus}{in.CV\_NVT\_plus}, post-processing was done via \href{\pathpartone/postprocess_NVT.sh}{postprocess\_NVT.sh} and the finite difference approximation was carried out via \href{\pathpartone/calc_CV.py}{calc\_CV.py}.
 
 
@@ -377,7 +409,8 @@ For the phase transition analysis, simulations between $25~K$ and $230~K$ have b
 The input-files are \href{\pathpartone/in.phasetrans}{in.phasetrans} for the first simulation and \href{\pathpartone/in.phasetrans_template}{in.phasetrans\_template} for all following.\\
 The results are post-processed via \href{\pathpartone/postprocess_phasetrans.py}{postprocess\_phasetrans.py} and plotted via \href{\pathpartone/plot_phasetrans.py}{plot\_phasetrans.py}.\\
 For the non-dimensionalization, the equilibrium box length is read from the log-file for each temperature.\\
-Figure~\ref{fig:p1_phasetransition_dens} show the equilibrated density as a function of the equilibrated temperature. Two phase transitions at $\sim130~K$ and $\sim177~K$. 
+Figure~\ref{fig:p1_phasetransition_dens} show the equilibrated density as a function of the equilibrated temperature. Two phase transitions at $\sim130~K$ and $\sim177~K$.\\
+The trajectories during the transitions are visualized in Figure~\ref{fig:p1_phasetransitions_snapshots}.
 
 
 
@@ -394,6 +427,34 @@ Figure~\ref{fig:p1_phasetransition_dens} show the equilibrated density as a func
 \label{fig:p1_phasetransition_dens}
 \end{figure}
 \end{center}
+
+
+\begin{center}
+\begin{figure}[h]
+\figuretitle{Visualization of the trajectories during the phase transitions}
+\begin{subfigure}{0.5\textwidth}
+  \includegraphics[width=9cm]{\fullpathpartone/plots/phasetrans/temp130.png}
+  \caption{$T=130~K$}
+\end{subfigure}~
+\begin{subfigure}{0.5\textwidth}
+  \includegraphics[width=9cm]{\fullpathpartone/plots/phasetrans/temp131.png}
+  \caption{$T=131~K$}
+\end{subfigure}
+
+\begin{subfigure}{0.5\textwidth}
+  \includegraphics[width=9cm]{\fullpathpartone/plots/phasetrans/temp177.png}
+  \caption{$T=177~K$}
+\end{subfigure}~
+\begin{subfigure}{0.5\textwidth}
+  \includegraphics[width=8.5cm]{\fullpathpartone/plots/phasetrans/temp178.png}
+  \caption{$T=178~K$}
+\end{subfigure}
+\caption[Visualization of the trajectories during the phase transitions]{Visualization of the trajectories during the phase transitions at four different Temperatures. The top two figures show the melting process around $130~K$, the bottom two figures show the boiling around $177~K$. Please note that the box-size are not up to scale from one figure to another. Instead, one can use the atom size as a reference for the total system size.}
+\label{fig:p1_phasetransitions_snapshots}
+\end{figure}
+\end{center}
+
+
 
 
 

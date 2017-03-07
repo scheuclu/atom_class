@@ -1,18 +1,19 @@
 \contentsline {chapter}{\numberline {1}Three-dimensional atomistic system}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Constant temperature and molecular dynamics}{3}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Equilibriation}{4}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Stability comparison between Noose-Hoover and Berendsen}{4}{subsection.1.1.2}
-\contentsline {subsection}{\numberline {1.1.3}Dependence on the system-size}{4}{subsection.1.1.3}
-\contentsline {subsection}{\numberline {1.1.4}MCMC}{4}{subsection.1.1.4}
-\contentsline {subsubsection}{Difference between MCMC and MD}{5}{section*.7}
-\contentsline {section}{\numberline {1.2}Constant pressure/temperature molecular dynamics}{5}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Finding the equilibrium box sizes}{5}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Evaluation of CV}{5}{subsection.1.2.2}
-\contentsline {subsubsection}{Equilibration}{5}{section*.12}
-\contentsline {subsubsection}{Estimation of box length}{5}{section*.13}
-\contentsline {subsubsection}{Equilibriation under NVT-ensemble}{6}{section*.14}
-\contentsline {subsubsection}{Estimation of specific heat capacity}{6}{section*.17}
-\contentsline {section}{\numberline {1.3}Phase transition of Krypton}{6}{section.1.3}
-\contentsline {chapter}{\numberline {2}Two-dimensional atomistic tensile test}{14}{chapter.2}
-\contentsline {section}{\numberline {2.1}Equilibriation}{14}{section.2.1}
-\contentsline {section}{\numberline {2.2}Tensile test}{14}{section.2.2}
+\contentsline {section}{\numberline {1.1}Determination of lattice constant}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Constant temperature and molecular dynamics}{3}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Equilibriation}{4}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Stability comparison between Noose-Hoover and Berendsen}{4}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Dependence on the system-size}{4}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}MCMC}{4}{subsection.1.2.4}
+\contentsline {subsubsection}{Difference between MCMC and MD}{5}{section*.9}
+\contentsline {section}{\numberline {1.3}Constant pressure/temperature molecular dynamics}{5}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Finding the equilibrium box sizes}{5}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Evaluation of CV}{5}{subsection.1.3.2}
+\contentsline {subsubsection}{Equilibration}{5}{section*.14}
+\contentsline {subsubsection}{Estimation of box length}{5}{section*.15}
+\contentsline {subsubsection}{Equilibriation under NVT-ensemble}{6}{section*.16}
+\contentsline {subsubsection}{Estimation of specific heat capacity}{6}{section*.19}
+\contentsline {section}{\numberline {1.4}Phase transition of Krypton}{6}{section.1.4}
+\contentsline {chapter}{\numberline {2}Two-dimensional atomistic tensile test}{17}{chapter.2}
+\contentsline {section}{\numberline {2.1}Equilibriation}{17}{section.2.1}
+\contentsline {section}{\numberline {2.2}Tensile test}{17}{section.2.2}
