@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.8)  6 MAR 2017 16:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.8)  6 MAR 2017 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -906,6 +906,9 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )))
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
@@ -1019,7 +1022,7 @@ oupplots.code.tex
 zlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 25.
+Package hyperref Info: Option `colorlinks' set `true' on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -1035,23 +1038,27 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layouthoffset=\dimen186
 \Gm@layoutvoffset=\dimen187
 \Gm@dimlist=\toks39
-) (build/main.aux)
+) (build/main.aux
+
+LaTeX Warning: Label `fig:p2_dampstudy_PotEng' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count144
@@ -1070,10 +1077,10 @@ LaTeX Font Info:    ... okay on input line 93.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 93.
+ on input line 97.
 
 \AtBeginShipoutBox=\box41
-Package hyperref Info: Link coloring ON on input line 93.
+Package hyperref Info: Link coloring ON on input line 97.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1082,9 +1089,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count150
 )
-LaTeX Info: Redefining \ref on input line 93.
-LaTeX Info: Redefining \pageref on input line 93.
-LaTeX Info: Redefining \nameref on input line 93.
+LaTeX Info: Redefining \ref on input line 97.
+LaTeX Info: Redefining \pageref on input line 97.
+LaTeX Info: Redefining \nameref on input line 97.
 
 (build/main.out) (build/main.out)
 \@outlinefile=\write4
@@ -1126,47 +1133,47 @@ LaTeX Info: Redefining \nameref on input line 93.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Chapter 1.
-LaTeX Font Info:    Try loading font information for U+msa on input line 104.
+LaTeX Font Info:    Try loading font information for U+msa on input line 108.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 104.
+LaTeX Font Info:    Try loading font information for U+msb on input line 108.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: Command \r invalid in math mode on input line 117.
+LaTeX Warning: Command \r invalid in math mode on input line 121.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 117.
+LaTeX Warning: Command \r invalid in math mode on input line 121.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 117.
+LaTeX Warning: Command \r invalid in math mode on input line 121.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 117.
+LaTeX Warning: Command \r invalid in math mode on input line 121.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 117.
+LaTeX Warning: Command \r invalid in math mode on input line 121.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 117.
+LaTeX Warning: Command \r invalid in math mode on input line 121.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 119.
+LaTeX Warning: Command \r invalid in math mode on input line 123.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 126.
+LaTeX Warning: Command \r invalid in math mode on input line 130.
 
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/latticeconst/PotEng_over_Lx.png, id=95, 578.16pt x 4
+sional_atomic_system/plots/latticeconst/PotEng_over_Lx.png, id=55, 578.16pt x 4
 33.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/latticeconst/PotEng_over_Lx.png Graphic file (t
@@ -1176,11 +1183,11 @@ ype png)
 imensional_atomic_system/plots/latticeconst/PotEng_over_Lx.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/latticeconst/PotEng_over_Lx.
-png used on input line 130.
+png used on input line 134.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/latticeconst/Density_over_Lx.png, id=97, 578.16pt x 
+sional_atomic_system/plots/latticeconst/Density_over_Lx.png, id=57, 578.16pt x 
 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/latticeconst/Density_over_Lx.png Graphic file (
@@ -1190,32 +1197,32 @@ type png)
 imensional_atomic_system/plots/latticeconst/Density_over_Lx.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/latticeconst/Density_over_Lx
-.png used on input line 131.
+.png used on input line 135.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
-Overfull \hbox (6.66664pt too wide) in paragraph at lines 130--132
+Overfull \hbox (6.66664pt too wide) in paragraph at lines 134--136
 [][]  []  
  []
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 132.
+LaTeX Warning: Command \r invalid in math mode on input line 136.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 132.
+LaTeX Warning: Command \r invalid in math mode on input line 136.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 142.
+LaTeX Warning: Command \r invalid in math mode on input line 146.
 
 [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/dampstudy/NVT_Temp_atomnum500.png, id=122, 578.16pt 
-x 433.62pt>
+sional_atomic_system/plots/dampstudy/NVT_Temp_atomnum500.png, id=82, 578.16pt x
+ 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/dampstudy/NVT_Temp_atomnum500.png Graphic file 
 (type png)
@@ -1224,12 +1231,12 @@ dimensional_atomic_system/plots/dampstudy/NVT_Temp_atomnum500.png Graphic file
 imensional_atomic_system/plots/dampstudy/NVT_Temp_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVT_Temp_atomnum50
-0.png used on input line 147.
+0.png used on input line 151.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/dampstudy/NVEBer_Temp_atomnum500.png, id=123, 578.16
-pt x 433.62pt>
+sional_atomic_system/plots/dampstudy/NVEBer_Temp_atomnum500.png, id=83, 578.16p
+t x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/dampstudy/NVEBer_Temp_atomnum500.png Graphic fi
 le (type png)
@@ -1238,12 +1245,12 @@ le (type png)
 imensional_atomic_system/plots/dampstudy/NVEBer_Temp_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVEBer_Temp_atomnu
-m500.png used on input line 148.
+m500.png used on input line 152.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/dampstudy/NVT_PotEng_atomnum500.png, id=124, 578.16p
-t x 433.62pt>
+sional_atomic_system/plots/dampstudy/NVT_PotEng_atomnum500.png, id=84, 578.16pt
+ x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/dampstudy/NVT_PotEng_atomnum500.png Graphic fil
 e (type png)
@@ -1252,12 +1259,12 @@ e (type png)
 imensional_atomic_system/plots/dampstudy/NVT_PotEng_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVT_PotEng_atomnum
-500.png used on input line 149.
+500.png used on input line 153.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/dampstudy/NVEBer_PotEng_atomnum500.png, id=125, 578.
-16pt x 433.62pt>
+sional_atomic_system/plots/dampstudy/NVEBer_PotEng_atomnum500.png, id=85, 578.1
+6pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/dampstudy/NVEBer_PotEng_atomnum500.png Graphic 
 file (type png)
@@ -1266,12 +1273,12 @@ file (type png)
 imensional_atomic_system/plots/dampstudy/NVEBer_PotEng_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVEBer_PotEng_atom
-num500.png used on input line 150.
+num500.png used on input line 154.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/dampstudy/NVT_KinEng_atomnum500.png, id=126, 578.16p
-t x 433.62pt>
+sional_atomic_system/plots/dampstudy/NVT_KinEng_atomnum500.png, id=86, 578.16pt
+ x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/dampstudy/NVT_KinEng_atomnum500.png Graphic fil
 e (type png)
@@ -1280,12 +1287,12 @@ e (type png)
 imensional_atomic_system/plots/dampstudy/NVT_KinEng_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVT_KinEng_atomnum
-500.png used on input line 151.
+500.png used on input line 155.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/dampstudy/NVEBer_KinEng_atomnum500.png, id=127, 578.
-16pt x 433.62pt>
+sional_atomic_system/plots/dampstudy/NVEBer_KinEng_atomnum500.png, id=87, 578.1
+6pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/dampstudy/NVEBer_KinEng_atomnum500.png Graphic 
 file (type png)
@@ -1294,20 +1301,20 @@ file (type png)
 imensional_atomic_system/plots/dampstudy/NVEBer_KinEng_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVEBer_KinEng_atom
-num500.png used on input line 152.
+num500.png used on input line 156.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
-Overfull \hbox (9.44444pt too wide) in paragraph at lines 147--153
+Overfull \hbox (9.44444pt too wide) in paragraph at lines 151--157
 []\OT1/cmr/m/n/10 g[]  []
  []
 
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 147--153
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 151--157
 []  []
  []
 
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 147--153
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 151--157
 []  [] 
  []
 
@@ -1316,8 +1323,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp10_atomnum500.png, id=129, 57
-8.16pt x 433.62pt>
+sional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp10_atomnum500.png, id=89, 578
+.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp10_atomnum500.png Graphi
 c file (type png)
@@ -1326,12 +1333,12 @@ c file (type png)
 imensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp10_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp10_at
-omnum500.png used on input line 165.
+omnum500.png used on input line 169.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp10_atomnum500.png, id=130, 
-578.16pt x 433.62pt>
+sional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp10_atomnum500.png, id=90, 5
+78.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp10_atomnum500.png Grap
 hic file (type png)
@@ -1340,12 +1347,12 @@ hic file (type png)
 imensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp10_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp10_
-atomnum500.png used on input line 166.
+atomnum500.png used on input line 170.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp100_atomnum500.png, id=131, 5
-78.16pt x 433.62pt>
+sional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp100_atomnum500.png, id=91, 57
+8.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp100_atomnum500.png Graph
 ic file (type png)
@@ -1354,12 +1361,12 @@ ic file (type png)
 imensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp100_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp100_a
-tomnum500.png used on input line 167.
+tomnum500.png used on input line 171.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp100_atomnum500.png, id=132,
- 578.16pt x 433.62pt>
+sional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp100_atomnum500.png, id=92, 
+578.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp100_atomnum500.png Gra
 phic file (type png)
@@ -1368,12 +1375,12 @@ phic file (type png)
 imensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp100_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp100
-_atomnum500.png used on input line 168.
+_atomnum500.png used on input line 172.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp1000_atomnum500.png, id=133, 
-578.16pt x 433.62pt>
+sional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp1000_atomnum500.png, id=93, 5
+78.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp1000_atomnum500.png Grap
 hic file (type png)
@@ -1382,12 +1389,12 @@ hic file (type png)
 imensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp1000_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp1000_
-atomnum500.png used on input line 169.
+atomnum500.png used on input line 173.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp1000_atomnum500.png, id=134
-, 578.16pt x 433.62pt>
+sional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp1000_atomnum500.png, id=94,
+ 578.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp1000_atomnum500.png Gr
 aphic file (type png)
@@ -1396,20 +1403,20 @@ aphic file (type png)
 imensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp1000_atomnum500.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp100
-0_atomnum500.png used on input line 170.
+0_atomnum500.png used on input line 174.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 165--171
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 169--175
 [][]  []
  []
 
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 165--171
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 169--175
 []  []
  []
 
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 165--171
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 169--175
 []  [] 
  []
 
@@ -1418,8 +1425,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/cellnum_study/NVT_Temp_damp10.png, id=136, 578.16pt 
-x 433.62pt>
+sional_atomic_system/plots/cellnum_study/NVT_Temp_damp10.png, id=96, 578.16pt x
+ 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/cellnum_study/NVT_Temp_damp10.png Graphic file 
 (type png)
@@ -1428,12 +1435,12 @@ dimensional_atomic_system/plots/cellnum_study/NVT_Temp_damp10.png Graphic file
 imensional_atomic_system/plots/cellnum_study/NVT_Temp_damp10.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/cellnum_study/NVT_Temp_damp1
-0.png used on input line 182.
+0.png used on input line 186.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/cellnum_study/NVT_PotEng_damp10.png, id=137, 578.16p
-t x 433.62pt>
+sional_atomic_system/plots/cellnum_study/NVT_PotEng_damp10.png, id=97, 578.16pt
+ x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/cellnum_study/NVT_PotEng_damp10.png Graphic fil
 e (type png)
@@ -1442,32 +1449,101 @@ e (type png)
 imensional_atomic_system/plots/cellnum_study/NVT_PotEng_damp10.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/cellnum_study/NVT_PotEng_dam
-p10.png used on input line 183.
+p10.png used on input line 187.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 182--184
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 186--188
 [][] [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--202
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--207
-
- []
-
 [2 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-di
 mensional_atomic_system/plots/latticeconst/PotEng_over_Lx.png> </home/lukas/Des
 ktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_sy
 stem/plots/latticeconst/Density_over_Lx.png>]
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/boxsizesim/NPT_Lx_damp10.png, id=157, 578.16pt x 722
+sional_atomic_system/plots/MCMC_vs_NVT/Press_damp10.png, id=119, 578.16pt x 433
+.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
+dimensional_atomic_system/plots/MCMC_vs_NVT/Press_damp10.png Graphic file (type
+ png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-d
+imensional_atomic_system/plots/MCMC_vs_NVT/Press_damp10.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/1_three-dimensional_atomic_system/plots/MCMC_vs_NVT/Press_damp10.png
+ used on input line 207.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
+sional_atomic_system/plots/MCMC_vs_NVT/hist_Press_damp10.png, id=120, 578.16pt 
+x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
+dimensional_atomic_system/plots/MCMC_vs_NVT/hist_Press_damp10.png Graphic file 
+(type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-d
+imensional_atomic_system/plots/MCMC_vs_NVT/hist_Press_damp10.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/1_three-dimensional_atomic_system/plots/MCMC_vs_NVT/hist_Press_damp1
+0.png used on input line 208.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
+sional_atomic_system/plots/MCMC_vs_NVT/PotEng_damp10.png, id=121, 578.16pt x 43
+3.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
+dimensional_atomic_system/plots/MCMC_vs_NVT/PotEng_damp10.png Graphic file (typ
+e png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-d
+imensional_atomic_system/plots/MCMC_vs_NVT/PotEng_damp10.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/1_three-dimensional_atomic_system/plots/MCMC_vs_NVT/PotEng_damp10.pn
+g used on input line 209.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
+sional_atomic_system/plots/MCMC_vs_NVT/hist_PotEng_damp10.png, id=122, 578.16pt
+ x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
+dimensional_atomic_system/plots/MCMC_vs_NVT/hist_PotEng_damp10.png Graphic file
+ (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-d
+imensional_atomic_system/plots/MCMC_vs_NVT/hist_PotEng_damp10.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/1_three-dimensional_atomic_system/plots/MCMC_vs_NVT/hist_PotEng_damp
+10.png used on input line 210.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 207--211
+[][]  []
+ []
+
+
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 207--211
+[]  [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--232
+
+ []
+
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
+sional_atomic_system/plots/boxsizesim/NPT_Lx_damp10.png, id=127, 578.16pt x 722
 .7pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/boxsizesim/NPT_Lx_damp10.png Graphic file (type
@@ -1477,11 +1553,11 @@ dimensional_atomic_system/plots/boxsizesim/NPT_Lx_damp10.png Graphic file (type
 imensional_atomic_system/plots/boxsizesim/NPT_Lx_damp10.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/NPT_Lx_damp10.png
- used on input line 215.
+ used on input line 240.
 (pdftex.def)             Requested size: 256.07481pt x 320.0842pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp10.png, id=158, 578.16p
+sional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp10.png, id=128, 578.16p
 t x 722.7pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp10.png Graphic fil
@@ -1491,11 +1567,11 @@ e (type png)
 imensional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp10.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_dam
-p10.png used on input line 216.
+p10.png used on input line 241.
 (pdftex.def)             Requested size: 256.07481pt x 320.0842pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/boxsizesim/NPT_Lx_damp1000.png, id=159, 578.16pt x 7
+sional_atomic_system/plots/boxsizesim/NPT_Lx_damp1000.png, id=129, 578.16pt x 7
 22.7pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/boxsizesim/NPT_Lx_damp1000.png Graphic file (ty
@@ -1505,11 +1581,11 @@ pe png)
 imensional_atomic_system/plots/boxsizesim/NPT_Lx_damp1000.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/NPT_Lx_damp1000.p
-ng used on input line 217.
+ng used on input line 242.
 (pdftex.def)             Requested size: 256.07481pt x 320.0842pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp1000.png, id=160, 578.1
+sional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp1000.png, id=130, 578.1
 6pt x 722.7pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp1000.png Graphic f
@@ -1519,15 +1595,15 @@ ile (type png)
 imensional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp1000.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_dam
-p1000.png used on input line 218.
+p1000.png used on input line 243.
 (pdftex.def)             Requested size: 256.07481pt x 320.0842pt.
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 215--219
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 240--244
 [][]  []
  []
 
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 215--219
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 240--244
 []  [] 
  []
 
@@ -1536,7 +1612,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp10.png, id=161, 578.
+sional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp10.png, id=131, 578.
 16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp10.png Graphic 
@@ -1546,11 +1622,11 @@ file (type png)
 imensional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp10.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_
-damp10.png used on input line 227.
+damp10.png used on input line 252.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp1000.png, id=162, 57
+sional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp1000.png, id=132, 57
 8.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp1000.png Graphi
@@ -1560,11 +1636,11 @@ c file (type png)
 imensional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp1000.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_
-damp1000.png used on input line 228.
+damp1000.png used on input line 253.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/boxsizesim/relvar_Press_damp10.png, id=163, 578.16pt
+sional_atomic_system/plots/boxsizesim/relvar_Press_damp10.png, id=133, 578.16pt
  x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/boxsizesim/relvar_Press_damp10.png Graphic file
@@ -1574,11 +1650,11 @@ dimensional_atomic_system/plots/boxsizesim/relvar_Press_damp10.png Graphic file
 imensional_atomic_system/plots/boxsizesim/relvar_Press_damp10.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/relvar_Press_damp
-10.png used on input line 229.
+10.png used on input line 254.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/boxsizesim/relvar_Press_damp1000.png, id=164, 578.16
+sional_atomic_system/plots/boxsizesim/relvar_Press_damp1000.png, id=134, 578.16
 pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/boxsizesim/relvar_Press_damp1000.png Graphic fi
@@ -1588,15 +1664,15 @@ le (type png)
 imensional_atomic_system/plots/boxsizesim/relvar_Press_damp1000.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/relvar_Press_damp
-1000.png used on input line 230.
+1000.png used on input line 255.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 227--231
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 252--256
 [][]  []
  []
 
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 227--231
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 252--256
 []  [] 
  []
 
@@ -1605,7 +1681,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/boxsizesim/boxmod_NPT_Density_damp10.png, id=165, 57
+sional_atomic_system/plots/boxsizesim/boxmod_NPT_Density_damp10.png, id=135, 57
 8.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Density_damp10.png Graphi
@@ -1615,52 +1691,24 @@ c file (type png)
 imensional_atomic_system/plots/boxsizesim/boxmod_NPT_Density_damp10.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Densit
-y_damp10.png used on input line 239.
+y_damp10.png used on input line 264.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
-
-
-! Package inputenc Error: Unicode char ° (U+B0)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.240 ... provided reference value is based upon.}
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ° (U+B0)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.240 ... provided reference value is based upon.}
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 259.
+LaTeX Warning: Command \r invalid in math mode on input line 284.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 263.
+LaTeX Warning: Command \r invalid in math mode on input line 288.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 263.
+LaTeX Warning: Command \r invalid in math mode on input line 288.
 
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/CV/equi_TotEng.png, id=171, 578.16pt x 433.62pt>
+sional_atomic_system/plots/CV/equi_TotEng.png, id=141, 578.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/CV/equi_TotEng.png Graphic file (type png)
 
@@ -1668,11 +1716,11 @@ dimensional_atomic_system/plots/CV/equi_TotEng.png Graphic file (type png)
 imensional_atomic_system/plots/CV/equi_TotEng.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/CV/equi_TotEng.png used on i
-nput line 268.
+nput line 293.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/CV/hist_equi_TotEng.png, id=172, 578.16pt x 433.62pt
+sional_atomic_system/plots/CV/hist_equi_TotEng.png, id=142, 578.16pt x 433.62pt
 >
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/CV/hist_equi_TotEng.png Graphic file (type png)
@@ -1682,11 +1730,11 @@ dimensional_atomic_system/plots/CV/hist_equi_TotEng.png Graphic file (type png)
 imensional_atomic_system/plots/CV/hist_equi_TotEng.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_TotEng.png used
- on input line 269.
+ on input line 294.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/CV/equi_Temp.png, id=173, 578.16pt x 433.62pt>
+sional_atomic_system/plots/CV/equi_Temp.png, id=143, 578.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/CV/equi_Temp.png Graphic file (type png)
 
@@ -1694,11 +1742,11 @@ dimensional_atomic_system/plots/CV/equi_Temp.png Graphic file (type png)
 imensional_atomic_system/plots/CV/equi_Temp.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/CV/equi_Temp.png used on inp
-ut line 270.
+ut line 295.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/CV/hist_equi_Temp.png, id=174, 578.16pt x 433.62pt>
+sional_atomic_system/plots/CV/hist_equi_Temp.png, id=144, 578.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/CV/hist_equi_Temp.png Graphic file (type png)
 
@@ -1706,11 +1754,11 @@ dimensional_atomic_system/plots/CV/hist_equi_Temp.png Graphic file (type png)
 imensional_atomic_system/plots/CV/hist_equi_Temp.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_Temp.png used o
-n input line 271.
+n input line 296.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/CV/equi_Press.png, id=175, 578.16pt x 433.62pt>
+sional_atomic_system/plots/CV/equi_Press.png, id=145, 578.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/CV/equi_Press.png Graphic file (type png)
 
@@ -1718,11 +1766,11 @@ dimensional_atomic_system/plots/CV/equi_Press.png Graphic file (type png)
 imensional_atomic_system/plots/CV/equi_Press.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/CV/equi_Press.png used on in
-put line 272.
+put line 297.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/CV/hist_equi_Press.png, id=176, 578.16pt x 433.62pt>
+sional_atomic_system/plots/CV/hist_equi_Press.png, id=146, 578.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/CV/hist_equi_Press.png Graphic file (type png)
 
@@ -1730,20 +1778,20 @@ dimensional_atomic_system/plots/CV/hist_equi_Press.png Graphic file (type png)
 imensional_atomic_system/plots/CV/hist_equi_Press.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_Press.png used 
-on input line 273.
+on input line 298.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 268--274
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 293--299
 [][]  []
  []
 
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 268--274
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 293--299
 []  []
  []
 
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 268--274
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 293--299
 []  [] 
  []
 
@@ -1752,7 +1800,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/CV/equi_Lx.png, id=177, 578.16pt x 433.62pt>
+sional_atomic_system/plots/CV/equi_Lx.png, id=147, 578.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/CV/equi_Lx.png Graphic file (type png)
 
@@ -1760,11 +1808,11 @@ dimensional_atomic_system/plots/CV/equi_Lx.png Graphic file (type png)
 imensional_atomic_system/plots/CV/equi_Lx.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/CV/equi_Lx.png used on input
- line 281.
+ line 306.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/CV/hist_equi_Lx.png, id=178, 578.16pt x 433.62pt>
+sional_atomic_system/plots/CV/hist_equi_Lx.png, id=148, 578.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/CV/hist_equi_Lx.png Graphic file (type png)
 
@@ -1772,31 +1820,31 @@ dimensional_atomic_system/plots/CV/hist_equi_Lx.png Graphic file (type png)
 imensional_atomic_system/plots/CV/hist_equi_Lx.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_Lx.png used on 
-input line 282.
+input line 307.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 281--283
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 306--308
 [][]  [] 
  []
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 283.
+LaTeX Warning: Command \r invalid in math mode on input line 308.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 283.
+LaTeX Warning: Command \r invalid in math mode on input line 308.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 283.
+LaTeX Warning: Command \r invalid in math mode on input line 308.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 283.
+LaTeX Warning: Command \r invalid in math mode on input line 308.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
+[3]
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/phasetrans/Density.png, id=186, 578.16pt x 433.62pt>
+sional_atomic_system/plots/phasetrans/Density.png, id=171, 578.16pt x 433.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/phasetrans/Density.png Graphic file (type png)
 
@@ -1804,25 +1852,11 @@ dimensional_atomic_system/plots/phasetrans/Density.png Graphic file (type png)
 imensional_atomic_system/plots/phasetrans/Density.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/phasetrans/Density.png used 
-on input line 315.
+on input line 341.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/phasetrans/red_Density.png, id=187, 578.16pt x 433.6
-2pt>
-File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
-dimensional_atomic_system/plots/phasetrans/red_Density.png Graphic file (type p
-ng)
-
-<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-d
-imensional_atomic_system/plots/phasetrans/red_Density.png>
-Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
-eling/exam/1_three-dimensional_atomic_system/plots/phasetrans/red_Density.png u
-sed on input line 316.
-(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
-
-</home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/phasetrans/detail1/Density.png, id=188, 578.16pt x 4
+sional_atomic_system/plots/phasetrans/detail1/Density.png, id=172, 578.16pt x 4
 33.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/phasetrans/detail1/Density.png Graphic file (ty
@@ -1832,25 +1866,11 @@ pe png)
 imensional_atomic_system/plots/phasetrans/detail1/Density.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/phasetrans/detail1/Density.p
-ng used on input line 317.
+ng used on input line 343.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/phasetrans/detail1/red_Density.png, id=189, 578.16pt
- x 433.62pt>
-File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
-dimensional_atomic_system/plots/phasetrans/detail1/red_Density.png Graphic file
- (type png)
-
-<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-d
-imensional_atomic_system/plots/phasetrans/detail1/red_Density.png>
-Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
-eling/exam/1_three-dimensional_atomic_system/plots/phasetrans/detail1/red_Densi
-ty.png used on input line 318.
-(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
-
-</home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/phasetrans/detail2/Density.png, id=190, 578.16pt x 4
+sional_atomic_system/plots/phasetrans/detail2/Density.png, id=173, 578.16pt x 4
 33.62pt>
 File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
 dimensional_atomic_system/plots/phasetrans/detail2/Density.png Graphic file (ty
@@ -1860,126 +1880,384 @@ pe png)
 imensional_atomic_system/plots/phasetrans/detail2/Density.png>
 Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
 eling/exam/1_three-dimensional_atomic_system/plots/phasetrans/detail2/Density.p
-ng used on input line 319.
+ng used on input line 345.
 (pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
 
-</home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimen
-sional_atomic_system/plots/phasetrans/detail2/red_Density.png, id=191, 578.16pt
- x 433.62pt>
-File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
-dimensional_atomic_system/plots/phasetrans/detail2/red_Density.png Graphic file
- (type png)
-
-<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-d
-imensional_atomic_system/plots/phasetrans/detail2/red_Density.png>
-Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
-eling/exam/1_three-dimensional_atomic_system/plots/phasetrans/detail2/red_Densi
-ty.png used on input line 320.
-(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
-
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 315--321
-[][]  []
- []
-
-
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 315--321
-[]  []
- []
-
-
-Overfull \hbox (4.44443pt too wide) in paragraph at lines 315--321
-[]  [] 
+Overfull \hbox (267.18588pt too wide) in paragraph at lines 341--347
+[][]  []  []  
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3] [4] [5 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_
-three-dimensional_atomic_system/plots/dampstudy/NVT_Temp_atomnum500.png> </home
-/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional
-_atomic_system/plots/dampstudy/NVEBer_Temp_atomnum500.png> </home/lukas/Desktop
-/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system
-/plots/dampstudy/NVT_PotEng_atomnum500.png> </home/lukas/Desktop/project/indepe
-ndence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstud
-y/NVEBer_PotEng_atomnum500.png> </home/lukas/Desktop/project/independence/atomi
-stic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVT_KinEng
-_atomnum500.png> </home/lukas/Desktop/project/independence/atomistic_modeling/e
-xam/1_three-dimensional_atomic_system/plots/dampstudy/NVEBer_KinEng_atomnum500.
-png>] [6 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_th
-ree-dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp10_atomnum500.png> <
-/home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimens
-ional_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp10_atomnum500.png> </home/lu
-kas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_at
-omic_system/plots/NVT_vs_NVEBer/Temp_damp100_atomnum500.png> </home/lukas/Deskt
-op/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_syst
-em/plots/NVT_vs_NVEBer/PotEng_damp100_atomnum500.png> </home/lukas/Desktop/proj
-ect/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plot
-s/NVT_vs_NVEBer/Temp_damp1000_atomnum500.png> </home/lukas/Desktop/project/inde
-pendence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs
-_NVEBer/PotEng_damp1000_atomnum500.png>] [7 </home/lukas/Desktop/project/indepe
-ndence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/cellnum_
-study/NVT_Temp_damp10.png> </home/lukas/Desktop/project/independence/atomistic_
-modeling/exam/1_three-dimensional_atomic_system/plots/cellnum_study/NVT_PotEng_
-damp10.png>] [8 </home/lukas/Desktop/project/independence/atomistic_modeling/ex
-am/1_three-dimensional_atomic_system/plots/boxsizesim/NPT_Lx_damp10.png> </home
-/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional
-_atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp10.png> </home/lukas/Desktop/
-project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/
-plots/boxsizesim/NPT_Lx_damp1000.png> </home/lukas/Desktop/project/independence
-/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/box
-mod_NPT_Lx_damp1000.png>] [9 </home/lukas/Desktop/project/independence/atomisti
-c_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_P
-ress_damp10.png> </home/lukas/Desktop/project/independence/atomistic_modeling/e
-xam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp100
-0.png> </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_thre
-e-dimensional_atomic_system/plots/boxsizesim/relvar_Press_damp10.png> </home/lu
-kas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_at
-omic_system/plots/boxsizesim/relvar_Press_damp1000.png> </home/lukas/Desktop/pr
-oject/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/pl
-ots/boxsizesim/boxmod_NPT_Density_damp10.png>] [10 </home/lukas/Desktop/project
-/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/C
-V/equi_TotEng.png> </home/lukas/Desktop/project/independence/atomistic_modeling
-/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_TotEng.png> </home/l
-ukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_a
-tomic_system/plots/CV/equi_Temp.png> </home/lukas/Desktop/project/independence/
-atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_Te
-mp.png> </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_thr
-ee-dimensional_atomic_system/plots/CV/equi_Press.png> </home/lukas/Desktop/proj
-ect/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plot
-s/CV/hist_equi_Press.png>] [11 </home/lukas/Desktop/project/independence/atomis
-tic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/equi_Lx.png> </hom
-e/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensiona
-l_atomic_system/plots/CV/hist_equi_Lx.png>] [12 </home/lukas/Desktop/project/in
-dependence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/phas
-etrans/Density.png> </home/lukas/Desktop/project/independence/atomistic_modelin
-g/exam/1_three-dimensional_atomic_system/plots/phasetrans/red_Density.png> </ho
-me/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimension
-al_atomic_system/plots/phasetrans/detail1/Density.png> </home/lukas/Desktop/pro
+[4] [5 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_thre
+e-dimensional_atomic_system/plots/dampstudy/NVT_Temp_atomnum500.png> </home/luk
+as/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_ato
+mic_system/plots/dampstudy/NVEBer_Temp_atomnum500.png> </home/lukas/Desktop/pro
 ject/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plo
-ts/phasetrans/detail1/red_Density.png> </home/lukas/Desktop/project/independenc
-e/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/phasetrans/de
-tail2/Density.png> </home/lukas/Desktop/project/independence/atomistic_modeling
-/exam/1_three-dimensional_atomic_system/plots/phasetrans/detail2/red_Density.pn
-g>]
+ts/dampstudy/NVT_PotEng_atomnum500.png> </home/lukas/Desktop/project/independen
+ce/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NV
+EBer_PotEng_atomnum500.png> </home/lukas/Desktop/project/independence/atomistic
+_modeling/exam/1_three-dimensional_atomic_system/plots/dampstudy/NVT_KinEng_ato
+mnum500.png> </home/lukas/Desktop/project/independence/atomistic_modeling/exam/
+1_three-dimensional_atomic_system/plots/dampstudy/NVEBer_KinEng_atomnum500.png>
+] [6 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-
+dimensional_atomic_system/plots/NVT_vs_NVEBer/Temp_damp10_atomnum500.png> </hom
+e/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensiona
+l_atomic_system/plots/NVT_vs_NVEBer/PotEng_damp10_atomnum500.png> </home/lukas/
+Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic
+_system/plots/NVT_vs_NVEBer/Temp_damp100_atomnum500.png> </home/lukas/Desktop/p
+roject/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/p
+lots/NVT_vs_NVEBer/PotEng_damp100_atomnum500.png> </home/lukas/Desktop/project/
+independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NV
+T_vs_NVEBer/Temp_damp1000_atomnum500.png> </home/lukas/Desktop/project/independ
+ence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/NVT_vs_NVE
+Ber/PotEng_damp1000_atomnum500.png>] [7 </home/lukas/Desktop/project/independen
+ce/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/cellnum_stud
+y/NVT_Temp_damp10.png> </home/lukas/Desktop/project/independence/atomistic_mode
+ling/exam/1_three-dimensional_atomic_system/plots/cellnum_study/NVT_PotEng_damp
+10.png> </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_thr
+ee-dimensional_atomic_system/plots/MCMC_vs_NVT/Press_damp10.png> </home/lukas/D
+esktop/project/independence/atomistic_modeling/exam/1_three-dimensional_atomic_
+system/plots/MCMC_vs_NVT/hist_Press_damp10.png> </home/lukas/Desktop/project/in
+dependence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/MCMC
+_vs_NVT/PotEng_damp10.png> </home/lukas/Desktop/project/independence/atomistic_
+modeling/exam/1_three-dimensional_atomic_system/plots/MCMC_vs_NVT/hist_PotEng_d
+amp10.png>] [8 </home/lukas/Desktop/project/independence/atomistic_modeling/exa
+m/1_three-dimensional_atomic_system/plots/boxsizesim/NPT_Lx_damp10.png> </home/
+lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_
+atomic_system/plots/boxsizesim/boxmod_NPT_Lx_damp10.png> </home/lukas/Desktop/p
+roject/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/p
+lots/boxsizesim/NPT_Lx_damp1000.png> </home/lukas/Desktop/project/independence/
+atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxm
+od_NPT_Lx_damp1000.png>] [9 </home/lukas/Desktop/project/independence/atomistic
+_modeling/exam/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Pr
+ess_damp10.png> </home/lukas/Desktop/project/independence/atomistic_modeling/ex
+am/1_three-dimensional_atomic_system/plots/boxsizesim/boxmod_NPT_Press_damp1000
+.png> </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three
+-dimensional_atomic_system/plots/boxsizesim/relvar_Press_damp10.png> </home/luk
+as/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_ato
+mic_system/plots/boxsizesim/relvar_Press_damp1000.png> </home/lukas/Desktop/pro
+ject/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plo
+ts/boxsizesim/boxmod_NPT_Density_damp10.png>] [10 </home/lukas/Desktop/project/
+independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV
+/equi_TotEng.png> </home/lukas/Desktop/project/independence/atomistic_modeling/
+exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_TotEng.png> </home/lu
+kas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional_at
+omic_system/plots/CV/equi_Temp.png> </home/lukas/Desktop/project/independence/a
+tomistic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/hist_equi_Tem
+p.png> </home/lukas/Desktop/project/independence/atomistic_modeling/exam/1_thre
+e-dimensional_atomic_system/plots/CV/equi_Press.png> </home/lukas/Desktop/proje
+ct/independence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots
+/CV/hist_equi_Press.png>] [11 </home/lukas/Desktop/project/independence/atomist
+ic_modeling/exam/1_three-dimensional_atomic_system/plots/CV/equi_Lx.png> </home
+/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional
+_atomic_system/plots/CV/hist_equi_Lx.png> </home/lukas/Desktop/project/independ
+ence/atomistic_modeling/exam/1_three-dimensional_atomic_system/plots/phasetrans
+/Density.png> </home/lukas/Desktop/project/independence/atomistic_modeling/exam
+/1_three-dimensional_atomic_system/plots/phasetrans/detail1/Density.png> </home
+/lukas/Desktop/project/independence/atomistic_modeling/exam/1_three-dimensional
+_atomic_system/plots/phasetrans/detail2/Density.png>]
 Chapter 2.
-[13
+
+Underfull \hbox (badness 10000) in paragraph at lines 362--369
+
+ []
+
+
+LaTeX Warning: Reference `fig:p2_dampstudy_Temp' on page 12 undefined on input 
+line 370.
+
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp30.png, id=256, 5
+78.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp30.png Graph
+ic file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp30.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEn
+g_pdamp30.png used on input line 375.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp10.png, id=257, 5
+78.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp10.png Graph
+ic file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp10.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEn
+g_tdamp10.png used on input line 376.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp100.png, id=258, 
+578.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp100.png Grap
+hic file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp100.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEn
+g_pdamp100.png used on input line 377.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp100.png, id=259, 
+578.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp100.png Grap
+hic file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp100.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEn
+g_tdamp100.png used on input line 378.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp1000.png, id=260,
+ 578.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp1000.png Gra
+phic file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp1000.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEn
+g_pdamp1000.png used on input line 379.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp1000.png, id=261,
+ 578.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp1000.png Gra
+phic file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp1000.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEn
+g_tdamp1000.png used on input line 380.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 375--381
+[][]  []
+ []
+
+
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 375--381
+[]  []
+ []
+
+
+Overfull \hbox (6.66664pt too wide) in paragraph at lines 375--381
+[]  []  
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp30.png, id=262, 578
+.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp30.png Graphic
+ file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp30.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_
+pdamp30.png used on input line 388.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp10.png, id=263, 578
+.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp10.png Graphic
+ file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp10.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_
+tdamp10.png used on input line 389.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp100.png, id=264, 57
+8.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp100.png Graphi
+c file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp100.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_
+pdamp100.png used on input line 390.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp100.png, id=265, 57
+8.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp100.png Graphi
+c file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp100.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_
+tdamp100.png used on input line 391.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp1000.png, id=266, 5
+78.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp1000.png Graph
+ic file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp1000.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_
+pdamp1000.png used on input line 392.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp1000.png, id=267, 5
+78.16pt x 433.62pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp1000.png Graph
+ic file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp1000.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_
+tdamp1000.png used on input line 393.
+(pdftex.def)             Requested size: 256.07481pt x 192.05052pt.
+
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 388--394
+[][]  []
+ []
+
+
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 388--394
+[]  []
+ []
+
+
+Overfull \hbox (6.66664pt too wide) in paragraph at lines 388--394
+[]  []  
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/dump/equi/initial.png, id=268, 385.44pt x 289.08pt>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/dump/equi/initial.png Graphic file (type png)
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/dump/equi/initial.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/dump/equi/initial.png used on 
+input line 402.
+(pdftex.def)             Requested size: 256.07481pt x 192.05493pt.
+
+</home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensi
+onal_atomic_tensile_test/dump/equi/equilibrium.png, id=269, 385.44pt x 289.08pt
+>
+File: /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/dump/equi/equilibrium.png Graphic file (type png)
+
+
+<use /home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dim
+ensional_atomic_tensile_test/dump/equi/equilibrium.png>
+Package pdftex.def Info: /home/lukas/Desktop/project/independence/atomistic_mod
+eling/exam/2_Two-dimensional_atomic_tensile_test/dump/equi/equilibrium.png used
+ on input line 403.
+(pdftex.def)             Requested size: 256.07481pt x 192.05493pt.
+
+Overfull \hbox (4.44443pt too wide) in paragraph at lines 402--404
+[][]  [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12
+
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1160.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1160.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 411.
+ [13 </home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-di
+mensional_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp30.png> </ho
+me/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional
+_atomic_tensile_test/plots/equi/dampstudy/NVT_PotEng_tdamp10.png> </home/lukas/
+Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_t
+ensile_test/plots/equi/dampstudy/NVT_PotEng_pdamp100.png> </home/lukas/Desktop/
+project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_t
+est/plots/equi/dampstudy/NVT_PotEng_tdamp100.png> </home/lukas/Desktop/project/
+independence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plot
+s/equi/dampstudy/NVT_PotEng_pdamp1000.png> </home/lukas/Desktop/project/indepen
+dence/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/
+dampstudy/NVT_PotEng_tdamp1000.png>] [14 </home/lukas/Desktop/project/independe
+nce/atomistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/da
+mpstudy/NVT_Temp_pdamp30.png> </home/lukas/Desktop/project/independence/atomist
+ic_modeling/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT
+_Temp_tdamp10.png> </home/lukas/Desktop/project/independence/atomistic_modeling
+/exam/2_Two-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp
+100.png> </home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Tw
+o-dimensional_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp100.png> <
+/home/lukas/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensio
+nal_atomic_tensile_test/plots/equi/dampstudy/NVT_Temp_pdamp1000.png> </home/luk
+as/Desktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomi
+c_tensile_test/plots/equi/dampstudy/NVT_Temp_tdamp1000.png>] [15 </home/lukas/D
+esktop/project/independence/atomistic_modeling/exam/2_Two-dimensional_atomic_te
+nsile_test/dump/equi/initial.png> </home/lukas/Desktop/project/independence/ato
+mistic_modeling/exam/2_Two-dimensional_atomic_tensile_test/dump/equi/equilibriu
+m.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 411.
  (build/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1160.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1160.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 411.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 411.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1160.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 411.
  ) 
 Here is how much of TeX's memory you used:
- 27006 strings out of 494910
- 670467 string characters out of 6179836
- 817005 words of memory out of 5000000
- 29735 multiletter control sequences out of 15000+600000
+ 27085 strings out of 494910
+ 680129 string characters out of 6179836
+ 818353 words of memory out of 5000000
+ 29802 multiletter control sequences out of 15000+600000
  7770 words of font info for 30 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  62i,10n,77p,726b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1995,10 +2273,10 @@ msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 
-Output written on build/main.pdf (13 pages, 2593867 bytes).
+Output written on build/main.pdf (15 pages, 3311027 bytes).
 PDF statistics:
- 354 PDF objects out of 1000 (max. 8388607)
- 246 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
- 376 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 359 PDF objects out of 1000 (max. 8388607)
+ 219 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 371 words of extra memory for PDF output out of 10000 (max. 10000000)
 
