@@ -70,7 +70,7 @@ variable  seed equal 29494
 variable  T equal 180
 variable  mu equal 0
 variable  translate equal 1.0
-fix 2 all gcmc ${N} ${X} ${M} ${type} ${seed} ${T} ${mu} ${translate}
+fix 1 all gcmc ${N} ${X} ${M} ${type} ${seed} ${T} ${mu} ${translate}
 
 # output thermodynamics (T,E,P,etc.) every N=1 step
 thermo 20#100

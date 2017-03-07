@@ -23,7 +23,7 @@ if __name__ == "__main__":
     print(dampvals)
 
     thermostats    =['NVT','MCMC']
-    thermostatnames=['Nose-Hoover','Markov Chanin Monte Carlo']
+    thermostatnames=['Nose-Hoover MD','MCMC']
     quantities   =['PotEng',                      'Press',         'Temp',           'KinEng',                    'TotEng']
     quantitynames=['Potential Energy [Kcal/mole]','Pressure [atm]','Temperature [K]','Kinetic Energy [Kcal/mole]','Total Energy [Kcal/mole]']
 
@@ -50,4 +50,23 @@ if __name__ == "__main__":
                 plt.savefig(outfile,format='png')
                 plt.close()
 
+    for dampval in dampvals:
+        for quantity,quantityname in zip(quantities,quantitynames):
+                varianceavals=[]
+                outfile = './plots/MCMC_vs_NVT/hist_'+quantity+'_damp'+dampval+'.png'
+                for ensemble,ensemblename in zip(thermostats,thermostatnames):
+
+                    infile  = './results/'+ensemble+'/'+quantity+'_damp'+dampval+'_cellnum5'
+                    print(infile)
+                    
+                    ydata  = np.loadtxt(infile, delimiter=' ', usecols=(1,), unpack=True, dtype=float)
+                    n, bins, patches = plt.hist(cut_nparray(ydata), 30,normed=True, histtype='step', stacked=True, fill=False, label=ensemblename)
+
+                    plt.xlabel(quantityname)
+                    plt.ylabel('PDF value')
+                plt.legend(loc='upper right')
+                plt.title('Histogram '+quantityname+', Tdamp='+dampval+'[fs]')
+                print("\033[92m"+outfile+"\033[00m\n")
+                plt.savefig(outfile,format='png')
+                plt.close()
 

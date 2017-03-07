@@ -79,6 +79,9 @@ if __name__ == "__main__":
         plt.close()
 
 
+
+
+
         #detail1
         outfile = './plots/phasetrans/detail1/'+quantity+'.png'
         outfilered = './plots/phasetrans/detail1/red_'+quantity+'.png'

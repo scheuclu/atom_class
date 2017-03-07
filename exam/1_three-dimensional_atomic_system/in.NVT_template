@@ -73,7 +73,7 @@ fix 1 all nvt temp 180 180 <dampval>
 # fix 2 all temp/berendsen 180 180 <dampval>
 
 # output thermodynamics (T,E,P,etc.) every N=100 step
-thermo 100
+thermo 20
 # specify the thermodynamics to calculate and show as output
 thermo_style custom step time lx ly lz press density pxx pyy pzz pe temp pe ke etotal
 
