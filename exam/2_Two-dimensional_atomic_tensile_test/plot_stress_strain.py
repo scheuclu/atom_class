@@ -19,6 +19,8 @@ if __name__ == "__main__":
     outfilex = './plots/stressx_strain.png'
     outfiley = './plots/stressy_strain.png'
     outfilez = './plots/stressz_strain.png'
+
+    print(infile)
     strain   = np.loadtxt(infile, delimiter=' ', usecols=(0,), unpack=True, dtype=float)
     stressx  = np.loadtxt(infile, delimiter=' ', usecols=(1,), unpack=True, dtype=float)
     stressy  = np.loadtxt(infile, delimiter=' ', usecols=(2,), unpack=True, dtype=float)
@@ -28,6 +30,8 @@ if __name__ == "__main__":
     plt.xlabel('strain in x-direction [-]')
     plt.ylabel('Stress in x-direction [GPa]')
     plt.title('Stress-strain relation')
+    plt.grid()
+    print("\033[92m"+outfilex+"\033[00m\n")
     plt.savefig(outfilex,format='png')
     plt.close()
 
@@ -35,5 +39,8 @@ if __name__ == "__main__":
     plt.xlabel('Strain in x-direction [-]')
     plt.ylabel('Stress in y-direction [GPa]')
     plt.title('Stress-strain relation')
+    plt.plot()
+    plt.grid()
+    print("\033[92m"+outfiley+"\033[00m\n")
     plt.savefig(outfiley,format='png')
     plt.close()

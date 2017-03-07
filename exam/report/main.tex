@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
+\usepackage{subcaption}
 
 \usepackage{fancyhdr}
 \usepackage{graphicx}
@@ -92,10 +93,44 @@ s2_5, solid\\%
     create on use/X/.style={create col/copy column from table={/home/lukas/LRZ Sync+Share/Studium/Fach/DG/DG_project/lukas/results/config_task3_K5_N1_LF_x.dat}{0}}
 }
 
+\newcommand*{\figuretitle}[1]{%
+    {\centering%   <--------  will only affect the title because of the grouping (by the
+    \textbf{#1}%              braces before \centering and behind \medskip). If you remove
+    \par\medskip}%            these braces the whole body of a {figure} env will be centered.
+}
+
 
 
 \begin{document}
 
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.6\textwidth]{tum_logo.png}\par\vspace{1cm}
+	{\scshape\LARGE Technical University of Munich \par}
+	\vspace{1cm}
+	{\scshape\Large Atomistic Modeling of Materials\par}
+	\vspace{1.5cm}
+	\includegraphics[width=0.6\textwidth]{titlepicture2.png}\par\vspace{1cm}
+	{\huge\bfseries Final Project\par}
+	\vspace{2cm}
+	{\Large\itshape Lukas Scheucher\par}
+	\vfill
+%	supervised by\par
+%	Dr.~Mark \textsc{Brown}
+
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+
+
+
+
+
+\tableofcontents
+\listoffigures
 
 \chapter{Three-dimensional atomistic system}
 For the determination of the lattice constant and lattice type, 3 different configurations are considered:
@@ -104,8 +139,8 @@ For the determination of the lattice constant and lattice type, 3 different conf
 \item Body-centered cubic (BCC)
 \item Primitive cubic     (PC)
 \end{enumerate}
-The system will take those configuration, which shows the least total energy per atom. Since interactions happen not only with the closes neighbors, but also with other atoms, an simulation has to be performed to get the exact energies.\\
-However, a good first approximation can be made analytically by considering the following observations: All atoms within a lattice type are equal, meaning that an atom that appears as a center atom in BCC can also be viewed as a corner atom just by shifting the connections. Secondly, if one denoted the length of the cube as lattice constant $a$, one can easily determine the distances between all atom by simple geometric means.\\
+The system will take those configuration, which shows the least total energy per atom. Since interactions happen not only with the closes neighbors, but also with other atoms, an simulation has to be performed to get the exact energies. This is done below.\\
+However, a good first approximation can be made analytically by considering the following observations: All atoms within a lattice type are equal, meaning that an atom that appears as a center atom in BCC can also be viewed as a corner atom just by shifting the connections. Secondly, if one denotes the length of the cube as lattice constant $a$, one can easily determine the distances between all atom by simple geometric means.\\
 By looking only at the closest neighbors, one can derive the following expression for the energy per atom in all 3 grids:
 \begin{align}
 E_{FCC}&=6 U(a_{FCC})+12 U(a_{FCC}/\sqrt{2}) \\
@@ -131,9 +166,10 @@ The lattice-constant obtained after minimization is $5.64 \AA$. The minimization
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{Lattice constant approximation}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/latticeconst/PotEng_over_Lx.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/latticeconst/Density_over_Lx.png}~
-\caption[aa]{Convergence of Potential energy on the left, Final density value on the right. The final lattice-constant determined by the simulation is \textbf{5.640 $\AA$}. }
+\caption[Lattice constant determination - convergence]{Convergence of Potential energy on the left, Final density value on the right. The final lattice-constant determined by the simulation is \textbf{5.640 $\AA$}. }
 \label{fig:p1_latticeconst}
 \end{figure}
 \end{center}
@@ -148,13 +184,14 @@ Overall, the weakly-coupled Berendsen thermostat clearly performs superior compa
 
 \begin{center}
 \begin{figure}[h]
-g\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVT_Temp_atomnum500.png}~
+\figuretitle{Influence of the damping parameter on relative variance of results}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVT_Temp_atomnum500.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVEBer_Temp_atomnum500.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVT_PotEng_atomnum500.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVEBer_PotEng_atomnum500.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVT_KinEng_atomnum500.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/dampstudy/NVEBer_KinEng_atomnum500.png}
-\caption[aaa]{Equilibration of Temperature(top), Potential Energy(middle) and Kinetic Energy(bottom) for the Nose-Hoover thermostat(left) and the "weak-coupling" thermostat(right). The equilibriation is plotted for different damping parameters and the relative variance of the equilibrated part is provided.}
+\caption[Influence of the damping parameter on relative variance of results]{Equilibration of Temperature(top), Potential Energy(middle) and Kinetic Energy(bottom) for the Nose-Hoover thermostat(left) and the "weak-coupling" thermostat(right). The equilibriation is plotted for different damping parameters and the relative variance of the equilibrated part is provided.}
 \label{fig:p1_equilibriation}
 \end{figure}
 \end{center}
@@ -166,13 +203,14 @@ Overall, one can say that the weakly-coupled Berendsen delivers more accurate an
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{Comparisons between Nose-Hoover thermostat and weakly-coupled Berendsen thermostat}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/Temp_damp10_atomnum500.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/PotEng_damp10_atomnum500.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/Temp_damp100_atomnum500.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/PotEng_damp100_atomnum500.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/Temp_damp1000_atomnum500.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/NVT_vs_NVEBer/PotEng_damp1000_atomnum500.png}
-\caption[aaa]{Comparisons between Nose-Hoover thermostat(blue) and weakly-coupled Berendsen(green) for temperature (left) and Potential Energy(right). The 3 rows show the convergence for 3 different damping parameters.}
+\caption[Comparisons between Nose-Hoover thermostat and weakly-coupled Berendsen thermostat]{Comparisons between Nose-Hoover thermostat(blue) and weakly-coupled Berendsen(green) for temperature (left) and Potential Energy(right). The 3 rows show the convergence for 3 different damping parameters.}
 \label{fig:p1_NVT_vs_NVEBer}
 \end{figure}
 \end{center}
@@ -183,32 +221,34 @@ To determine the dependence of the Nose-Hoover thermostat's convergence on the s
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{Influence of the atom number on the results quality}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/cellnum_study/NVT_Temp_damp10.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/cellnum_study/NVT_PotEng_damp10.png}
-\caption[aaa]{Relative variance of Temperature(left) and Potential Energy(right) with respect to the number of atoms in the simulation. As the dashed line shows, the relative variance decays with the system size as $\frac{<T^2>-<T>^2}{<T>^2}\sim\frac{1}{N}$.}
+\caption[Influence of the atom number on the results quality]{Relative variance of Temperature(left) and Potential Energy(right) with respect to the number of atoms in the simulation. As the dashed line shows, the relative variance decays with the system size as $\frac{<T^2>-<T>^2}{<T>^2}\sim\frac{1}{N}$.}
 \label{fig:p1_cellnum_study}
 \end{figure}
 \end{center}
 
 
 \subsection{MCMC}
-The inputfile for the MCMC simulations was \href{\pathpartone/in.NVT_MCMC}{in.NVT\_MCMC}, the simulations were run by \href{\pathpartone/run_NVT_MCMC.sh}{run\_NVT\_MCMC.sh}, results were posprocessed with \href{\pathpartone/postprocess_MCMC.sh}{postprocess\_MCMC.sh} and plotted via \href{\pathpartone/plot_MCMC_vs_NVT.py}{plot\_MCMC\_vs\_NVT.py}.
+The input-file for the MCMC simulations was \href{\pathpartone/in.NVT_MCMC}{in.NVT\_MCMC}, the simulations were run by \href{\pathpartone/run_NVT_MCMC.sh}{run\_NVT\_MCMC.sh}, results were postprocessed with \href{\pathpartone/postprocess_MCMC.sh}{postprocess\_MCMC.sh} and plotted via \href{\pathpartone/plot_MCMC_vs_NVT.py}{plot\_MCMC\_vs\_NVT.py}.
 The results are stored in \href{\pathpartone/plots/MCMC_vs_NVT/}{plots/MCMC\_vs\_NVT/}.\\
 A visualization of the Density and Potential Energy results in provided in Figure\ref{fig:p1_MCMC_vs_NVT}.\\
-MCMC converges a little bit faster, but other than that neither the relative variance, nor the final distribution obtained are diffferent. For this reason, I conclude that in this setup, the performance of MCMC does not justify the significantly increased cost.
+MCMC converges a little bit faster, but other than that neither the relative variance, nor the final distribution obtained are different. For this reason, I conclude that in this setup, the performance of MCMC does not justify the significantly increased cost.
 
 \subsubsection{Difference between MCMC and MD}
-Molecular dynamics is based on the solution of simple ODEs of motion for every particle. A time integrator is applied to move the system from time $t^n$ to $t^n$ plus one. The most csotly part of MCMC is the evaluation of the force on a particle, since all neighbour interactions must be taken into account(up to a defined cutoff radius). Also, parallelization is limited, since neighbouring regions have to continously exchange information about the particles on the border.\\
-For MCMC, no neighbour evaluations are required. Instead, every particles position(momenta) is subsequantly updated by computing the Markov chain. MCMC can be advantagous for very large systems and high dimensions, in the examle here, it could not utilize its advantages.
+Molecular dynamics is based on the solution of simple ODEs of motion for every particle. A time integrator is applied to move the system from time $t^n$ to $t^n$ plus one. The most costly part of MCMC is the evaluation of the force on a particle, since all neighbor interactions must be taken into account(up to a defined cutoff radius). Also, parallelization is limited, since neighboring regions have to continuously exchange information about the particles on the border.\\
+For MCMC, no neighbor evaluations are required. Instead, every particles position(momenta) is subsequently updated by computing the Markov chain. MCMC can be advantageous for very large systems and high dimensions, in the example here, it could not utilize its advantages.
 
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{Comparison between MCMC and NVT-MD}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/MCMC_vs_NVT/Press_damp10.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/MCMC_vs_NVT/hist_Press_damp10.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/MCMC_vs_NVT/PotEng_damp10.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/MCMC_vs_NVT/hist_PotEng_damp10.png}
-\caption[aaa]{Comparison between MCMC and NVT-MD. Boit algorithms deliver very similar results. MCMC converges a little bit faster, but other than that neither the relative variance, nor the final distribution obtained are diffferent.}
+\caption[Comparison between MCMC and NVT-MD]{Comparison between MCMC and NVT-MD. Both algorithms deliver very similar results. MCMC converges a little bit faster, but other than that neither the relative variance, nor the final distribution obtained are different.}
 \label{fig:p1_MCMC_vs_NVT}
 \end{figure}
 \end{center}
@@ -237,11 +277,12 @@ where $N$ is the number of atoms $k_B$ is the Boltzmann constant, $T$ is the Tem
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{Determination of equilibrated box-size}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/boxsizesim/NPT_Lx_damp10.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/boxsizesim/boxmod_NPT_Lx_damp10.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/boxsizesim/NPT_Lx_damp1000.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/boxsizesim/boxmod_NPT_Lx_damp1000.png}
-\caption[aaa]{Determination of the box-size by equilibriation(left) and Time convergence after box-size modification (right). }
+\caption[Determination of equilibrated box-size]{Determination of the box-size by equilibriation(left) and Time convergence after box-size modification (right). }
 \label{fig:p1_boxsize}
 \end{figure}
 \end{center}
@@ -249,11 +290,12 @@ where $N$ is the number of atoms $k_B$ is the Boltzmann constant, $T$ is the Tem
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{Influence of the system size on the relative variance of pressure results}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/boxsizesim/boxmod_NPT_Press_damp10.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/boxsizesim/boxmod_NPT_Press_damp1000.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/boxsizesim/relvar_Press_damp10.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/boxsizesim/relvar_Press_damp1000.png}
-\caption[aaa]{Influence of the system size on the simulation. The top two figures show histograms of the obtained pressure values, the bottom two figures show the dependency of the relative variance on the system size. The left two figures have been calculated with a damping value of $10 fs$ the right two with $1000 fs$.}
+\caption[Influence of the system size on the relative variance of pressure results]{Influence of the system size on the simulation. The top two figures show histograms of the obtained pressure values, the bottom two figures show the dependency of the relative variance on the system size. The left two figures have been calculated with a damping value of $10 fs$ the right two with $1000 fs$.}
 \label{fig:pressure_over_boxsize}
 \end{figure}
 \end{center}
@@ -261,8 +303,9 @@ where $N$ is the number of atoms $k_B$ is the Boltzmann constant, $T$ is the Tem
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{Density results over box-size}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/boxsizesim/boxmod_NPT_Density_damp10.png}~
-\caption[aaa]{Density results as a function of the simulation box size. Clearly, the reference density is very well approximated. On should also take into account, that the $275.15~K$ that the instruction requires is slightly higher than the $\circ C$ that the provided reference value is based upon.}
+\caption[Density results over box-size]{Density results as a function of the simulation box size. Clearly, the reference density is very well approximated. On should also take into account, that the $275.15~K$ that the instruction requires is slightly higher than the $\circ C$ that the provided reference value is based upon.}
 \label{fig:pressure_over_atomnum}
 \end{figure}
 \end{center}
@@ -290,22 +333,24 @@ This scaling factor has been used in the input file for the following simulation
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{equilibriation under NPT ensemble}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/equi_TotEng.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/hist_equi_TotEng.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/equi_Temp.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/hist_equi_Temp.png}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/equi_Press.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/hist_equi_Press.png}
-\caption[aaa]{Equilibriation of the system under NPT-Ensemble. The left part shows the development of thermodynamic quantities over time, the right figures show the distribution of those quantities after equilibration has been reached. Both the target Temperature and target Pressure have been reached with an acceptable standard deviation.}
+\caption[Equilibriation under NPT ensemble]{Equilibriation of the system under NPT-Ensemble. The left part shows the development of thermodynamic quantities over time, the right figures show the distribution of those quantities after equilibration has been reached. Both the target Temperature and target Pressure have been reached with an acceptable standard deviation.}
 \label{fig:p1_CV_equi_NPT}
 \end{figure}
 \end{center}
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{Equilibrium box-length estimation under NPT-ensemle}
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/equi_Lx.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/hist_equi_Lx.png}
-\caption[aaa]{Estimation of the equilibrium Box length under the NPT ensemble. An equilibrated  value of $601~\AA$ is obtained with a standard deviation of $2.48 \AA$.}
+\caption[Equilibrium box-length estimation under NPT-ensemle]{Estimation of the equilibrium Box length under the NPT ensemble. An equilibrated  value of $601~\AA$ is obtained with a standard deviation of $2.48 \AA$.}
 \label{fig:p1_CV_equi_NPT_lx}
 \end{figure}
 \end{center}
@@ -331,20 +376,21 @@ The input-files for this task were \href{\pathpartone/in.CV_NVT_plus}{in.CV\_NVT
 For the phase transition analysis, simulations between $25~K$ and $230~K$ have been carried out with a temperature-step of $1~K$. Each time the final configuration is written to a file and read by the subsequent simulation as a initial configuration.\\
 The input-files are \href{\pathpartone/in.phasetrans}{in.phasetrans} for the first simulation and \href{\pathpartone/in.phasetrans_template}{in.phasetrans\_template} for all following.\\
 The results are post-processed via \href{\pathpartone/postprocess_phasetrans.py}{postprocess\_phasetrans.py} and plotted via \href{\pathpartone/plot_phasetrans.py}{plot\_phasetrans.py}.\\
-For the non-dimensionalization, the equilibrium box length is read from the logfile for each temperature.\\
+For the non-dimensionalization, the equilibrium box length is read from the log-file for each temperature.\\
 Figure~\ref{fig:p1_phasetransition_dens} show the equilibrated density as a function of the equilibrated temperature. Two phase transitions at $\sim130~K$ and $\sim177~K$. 
 
 
 
 \begin{center}
 \begin{figure}[h]
-\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/Density.png}~
+\figuretitle{Phase transition of Krypton under NPT ensemble}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/Density.png}\\
 %\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/red_Density.png}
-\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/detail1/Density.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/detail1/Density.png}
 %\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/detail1/red_Density.png}
-\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/detail2/Density.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/detail2/Density.png}
 %\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/detail2/red_Density.png}
-\caption[aaa]{Phase transition analysis of Krypton in NPT ensemble. Simulations have been carried out every $1~K$. As the first graph shows, we get 2 distinct phase transitions. The two graphs below show the transitions in greater detail. One can conclude, that the melting occurs at $\sim130~K$, and Boiling at $\sim177~K$.}
+\caption[Phase transition of Krypton under NPT ensemble]{Phase transition analysis of Krypton in NPT ensemble. Simulations have been carried out every $1~K$. As the first graph shows, we get 2 distinct phase transitions. The two graphs below show the transitions in greater detail. One can conclude, that the melting occurs at $\sim130~K$, and Boiling at $\sim177~K$.}
 \label{fig:p1_phasetransition_dens}
 \end{figure}
 \end{center}
@@ -360,38 +406,41 @@ Figure~\ref{fig:p1_phasetransition_dens} show the equilibrated density as a func
 \pagebreak
 \chapter{Two-dimensional atomistic tensile test}
 All files for this task are located in \href{\pathparttwo}{2\_Two-dimensional\_atomic\_tensile\_test}\\
-First, a system of $30\times30\times1$ cells has been set up and equilibriated under Nose-barostat. Several different compitantions of $T_{damp}$ and $p_{damp}$ have been used to determine the influence of both. The input file was \href{\pathparttwo\in.equi_template}{in.equi\_template}.
+\section{Equilibriation}
+First, a system of $30\times30\times1$ cells has been set up and equilibrated under Nose-barostat. Several different computations of $T_{damp}$ and $p_{damp}$ have been used to determine the influence of both. The input file was \href{\pathparttwo\in.equi_template}{in.equi\_template}.
 The influence of the damping parameters on the equilibriation of the Potential Energy is visualized in Figure~\ref{fig:p2_dampstudy_PotEng}.
 First of all, if the damping parameter, particularly the pressure damping parameter, is chosen too low, the simulation becomes unstable and crashes. This was e.g. the case for $p_{damp}=10~fs$.\\
-What is more, the graph shows, that the choice of $T_{damp}$ effects the convergence properties. The value should not be chosen too small. The choice of $p_{damp}$ on the other hand, seems not to influecne the convergence of the potential energy greatly, as long as it is choses such that the simulation is stable.\\
+What is more, the graph shows, that the choice of $T_{damp}$ effects the convergence properties. The value should not be chosen too small. The choice of $p_{damp}$ on the other hand, seems not to influence the convergence of the potential energy greatly, as long as it is choses such that the simulation is stable.\\
 Additionally, the convergence of the system Temperature w.r.t the damping parameters is provided in Figure~\ref{fig:p2_dampstudy_PotEng}.\\
-One can observe, that a too big choice of $T_{damp}$ leads to spurious osciallations at the beginning of the simuklations and periodic oscilattions even in the equilibriates regime.\\
+One can observe, that a too big choice of $T_{damp}$ leads to spurious oscillations at the beginning of the simulations and periodic oscillations even in the equilibrated regime.\\
 
 Based on Figures~\ref{fig:p2_dampstudy_PotEng} and \ref{fig:p2_dampstudy_Temp} the following choice is made: $T_{damp}=100~fs$, $p_{damp}=100~fs$.
-The equilibrium configuration is plottedin Figure~\ref{fig:p2_equi_ovito}.
+The equilibrium configuration is plotted in Figure~\ref{fig:p2_equi_ovito}.
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{Determination of appropriate damping parameters - Potential Energy}
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_PotEng_pdamp30.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_PotEng_tdamp10.png}
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_PotEng_pdamp100.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_PotEng_tdamp100.png}
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_PotEng_pdamp1000.png}~
-\includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_PotEng_tdamp1000.png}~
-\caption[aaa]{Influence of the damping parameters on the convergence of the potential energy. The plots on the left show a variation of $T_{damp}$ under constant values of $p_{damp}$, the plots on the left show a variation of $p_{damp}$ under constant values of $T_{damp}$.}
+\includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_PotEng_tdamp1000.png}
+\caption[Determination of appropriate damping parameters - Potential Energy]{Influence of the damping parameters on the convergence of the potential energy. The plots on the left show a variation of $T_{damp}$ under constant values of $p_{damp}$, the plots on the left show a variation of $p_{damp}$ under constant values of $T_{damp}$.}
 \label{fig:p2_dampstudy_PotEng}
 \end{figure}
 \end{center}
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{Determination of appropriate damping parameters - Temperature}
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_Temp_pdamp30.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_Temp_tdamp10.png}
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_Temp_pdamp100.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_Temp_tdamp100.png}
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_Temp_pdamp1000.png}~
-\includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_Temp_tdamp1000.png}~
-\caption[aaa]{Influence of the damping parameters on the convergence of the system temperature. The plots on the left show a variation of $T_{damp}$ under constant values of $p_{damp}$, the plots on the left show a variation of $p_{damp}$ under constant values of $T_{damp}$.}
+\includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/equi/dampstudy/NVT_Temp_tdamp1000.png}
+\caption[Determination of appropriate damping parameters - Temperature]{Influence of the damping parameters on the convergence of the system temperature. The plots on the left show a variation of $T_{damp}$ under constant values of $p_{damp}$, the plots on the left show a variation of $p_{damp}$ under constant values of $T_{damp}$.}
 \label{fig:p2_dampstudy_PotEng}
 \end{figure}
 \end{center}
@@ -399,20 +448,60 @@ The equilibrium configuration is plottedin Figure~\ref{fig:p2_equi_ovito}.
 
 \begin{center}
 \begin{figure}[h]
+\figuretitle{System snapshots of the 2D system during equilibriation}
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/dump/equi/initial.png}~
 \includegraphics[width=0.5\textwidth]{\fullpathparttwo/dump/equi/equilibrium.png}
-\caption[aaa]{Initial(left) and equilibriated configuration(right) of the 2D-Krypton system. Thej atom radius is up to scale.}
+\caption[System snapshots of the 2D system during equilibriation]{Initial(left) and equilibriated configuration(right) of the 2D-Krypton system. The atom radius is up to scale.}
 \label{fig:p2_equi_ovito}
+\end{figure}
+\end{center}
+
+
+
+\section{Tensile test}
+Based on the considerations before, the tensilte test was conducted with damping parameters of $T_{damp}=100~fd$ and $p_{damp}=100~fs$.\\
+The input file for the tensile-test was \href{\pathparttwo/in.tensiletest}{in.tensiletest}, the results were plotted via \href{\pathparttwo/plot_tensiletest.py}{plot\_tensiletest.py}.\\
+The results of the tensile test are visualized in Figure~\ref{fig:p2_stress_strain_relation}.
+
+
+
+
+
+\begin{center}
+\begin{figure}[h]
+\figuretitle{Stress-strain relations}
+\includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/stressx_strain.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/stressy_strain.png}
+\caption[Stress-strain relations]{Stress in x-direction(left) and y-direction(right) as a function of the strain in x-direction. A clear point of material failure can be observed  }
+\label{fig:p2_stress_strain_relation}
 \end{figure}
 \end{center}
 
 
 \begin{center}
 \begin{figure}[h]
-\includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/stressx_strain.png}~
-\includegraphics[width=0.5\textwidth]{\fullpathparttwo/plots/stressy_strain.png}
-\caption[aaa]{Stress in x direction(left) and y-direction(right) as a function of the strain in x-direction. Clearly, the material begins to fail at a strain of approximately $0.2$. }
-\label{fig:p2_stress_strain_relation}
+\figuretitle{Visualization of the trajectories during stress-strain simulation}
+\begin{subfigure}{0.5\textwidth}
+  \includegraphics[width=9cm]{\fullpathparttwo/plots/tensiletest/step0.png}
+  \caption{Strain=0.00}
+\end{subfigure}~
+\begin{subfigure}{0.5\textwidth}
+  \includegraphics[width=9cm]{\fullpathparttwo/plots/tensiletest/step80.png}
+  \caption{Strain=0.04}
+\end{subfigure}
+
+\begin{subfigure}{0.5\textwidth}
+  \includegraphics[width=9cm]{\fullpathparttwo/plots/tensiletest/step150.png}
+  \caption{Strain=0.07}
+\end{subfigure}~
+\begin{subfigure}{0.5\textwidth}
+  \includegraphics[width=9cm]{\fullpathparttwo/plots/tensiletest/step200.png}
+  \caption{Strain=0.10}
+\end{subfigure}
+
+
+\caption[Visualization of the trajectories during stress-strain simulation]{The figure shows 4 snapshots of the system for 4 different strain values. All snapshots show equilibrated systems. The visulalization coincides perfectly with Figure~\ref{fig:p2_stress_strain_relation}, that suggests a critical strain of $0.035$.}
+\label{fig:p2_stress_strain_relation_snapshots}
 \end{figure}
 \end{center}
 

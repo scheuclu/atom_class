@@ -3,7 +3,7 @@ variable Tinit equal 10
 variable Tequi equal 10
 variable Pequi equal 1.0
 variable TimeStep equal 4.0
-variable Steps equal 8000000
+variable Steps equal 500000
 
 
 # ---- INITIALIZATION ----------------------------------------------------------
@@ -35,7 +35,7 @@ thermo_style     custom step lx ly lz press pxx pyy pzz pe temp
 
 # ---- PERFORMING FEWER STEPS FOR EQUILIBRIATION -------------------------------
 variable         tempSteps equal "v_Steps/10"
-run              ${tempSteps}
+run              100000
 unfix            1
 
 
@@ -57,6 +57,7 @@ variable        srate1 equal "v_srate / 1.05e15"
 print            "${srate1}"
 # fix for deforming the system in x-direction
 fix             2 all deform 1 x erate ${srate1} units box remap x
+fix             3 all nvt temp ${Tequi} ${Tequi} 100
 
 
 # ---- SPECIFY COMPUTES --------------------------------------------------------
@@ -75,10 +76,19 @@ variable       p4 equal "-pzz*101.325e-6"
 # fix for writing the strain and stresses to file
 fix            1 all print 100 "${p1} ${p2} ${p3} ${p4}" file ./results/stress_strain.txt screen no
 # writing trajectory
-dump           2 all atom 10000 ./dump/tensiletest/100_100_*.atom
+dump           3 all atom 1000 ./dump/tensiletest/100_100_*.atom
 # display thermo
-thermo          1000
+thermo          100
 thermo_style   custom step time v_strain temp v_p1 v_p2 v_p3 v_p4 ke pe press
 log            ./logfiles/tensiletest/100_100.log
 #run the simulation
 run            ${Steps}
+
+
+unfix 1
+unfix 2
+timestep 10
+fix              1 all npt temp ${Tequi} ${Tequi} 1000 iso ${Pequi} ${Pequi} 1000
+log             logfiles/test.log
+dump             2 all atom 1000 ./dump/tensiletest/test_100_100_*.atom
+run              10000
