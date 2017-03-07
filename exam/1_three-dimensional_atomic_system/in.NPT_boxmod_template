@@ -33,7 +33,7 @@ replicate       1 1 1
 # assign mass to atoms of group with ID 1
 mass            1 86.798
 
-change_box      all x scale <boxsize> y scale <boxsize> z scale <boxsize> remap units box
+change_box      all x scale <boxsize> y scale <boxsize> z scale <boxsize> remap units lattice
 # ----- DEFINE INTERATOMIC POTENTIAL
 
 # define how the atoms interact: Lennard-Jones potential with cut
@@ -66,6 +66,7 @@ velocity all create 275.15 12345 mom yes rot no
 # thermostat integration for simulating the desired ensemble
 # integration on Nose-Hoover hamiltionian equations of motion
 fix 1 all npt temp 275.15 275.15 <dampval> iso 1.0 1.0 1000
+fix 2 all box/relax iso 0.0 vmax 0.001
 # FOR BERENDSEN
 # fix 1 all nve
 # fix 2 all temp/berendsen 180 180 <dampval>

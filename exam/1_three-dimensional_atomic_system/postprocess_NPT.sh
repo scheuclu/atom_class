@@ -3,7 +3,7 @@ readarray -t dampvals < ./scriptinput/dampvals
 while read -r cellnum scalefac; do
   echo "cellnum:$cellnum  scalefac:$scalefac"
   for dampval in ${dampvals[@]};do
-    for quantity in Lx Ly Lz Press; do
+    for quantity in Lx Ly Lz Press Density Temp; do
 
       ${LOG2TXT} logfiles/NPT/damp${dampval}_cellnum${cellnum}\
                  ./results/NPT/${quantity}_damp${dampval}_cellnum${cellnum}\

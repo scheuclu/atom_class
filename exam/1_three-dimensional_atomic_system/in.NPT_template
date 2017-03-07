@@ -68,6 +68,7 @@ velocity all create 275.15 12345 mom yes rot no
 # thermostat integration for simulating the desired ensemble
 # integration on Nose-Hoover hamiltionian equations of motion
 fix 1 all npt temp 275.15 275.15 <dampval> iso 1.0 1.0 1000
+fix 2 all box/relax iso 0.0 vmax 0.001
 # FOR BERENDSEN
 # fix 1 all nve
 # fix 2 all temp/berendsen 180 180 <dampval>

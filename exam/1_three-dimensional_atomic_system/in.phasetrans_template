@@ -1,0 +1,39 @@
+
+
+read_restart phasetrans.lastconfig
+
+
+# ----- COMPUTES
+
+# compute the potential energy per atom
+compute         eng all pe/atom
+# computes the final energy of the cell system
+compute         eatoms all reduce sum c_eng
+
+# ----- EQUILIBRATION
+
+# in case other simulation was running before set timestep to zero
+reset_timestep	0
+# set an appropriate timesetp for time integration
+timestep       10
+
+# integration on Nose-Hoover hamiltionian equations of motion
+fix 1 all npt temp <temp> <temp> 500 iso 1.0 1.0 1000
+# FOR BERENDSEN
+# fix 1 all nve
+# fix 2 all temp/berendsen 180 180 <dampval>
+
+# output thermodynamics (T,E,P,etc.) every N=100 step
+thermo 20
+# specify the thermodynamics to calculate and show as output
+thermo_style custom step time lx ly lz density vol press pxx pyy pzz pe temp pe ke etotal
+
+# dump command for writing the trajectories for every N=250 steps
+dump 1 all atom 500 ./dump/phasetrans/temp<temp>_*.py
+
+# Run for the simulation for desired amount of timesteps until equilibration
+log ./logfiles/phasetrans/temp<temp>.log
+run 10000
+
+write_restart phasetrans.lastconfig
+quit

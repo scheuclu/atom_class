@@ -81,8 +81,10 @@ if __name__ == "__main__":
                 plt.savefig(outfile,format='png')
                 plt.close()
 
+
+    #plot histograms
     for ensemble, esemblename in zip(thermostats,thermostatnames):
-        for quantity, quantityname in zip(['Press'],['Pressure[atm]']):
+        for quantity, quantityname in zip(['Press','Temp'],['Pressure[atm]','Temperature [K]']):
             for dampval in dampvals:
                 variancevals=[]
                 outfile = './plots/boxsizesim/boxmod_'+ensemble+'_'+quantity+'_damp'+dampval+'.png'
@@ -128,5 +130,39 @@ if __name__ == "__main__":
                 plt.title('relative variance for Tdamp='+dampval+'[fs]')
                 outfile="./plots/boxsizesim/relvar_"+quantity+"_damp"+dampval+".png"
                 plt.savefig(outfile,fomat='png')
+                plt.close()
+
+
+
+
+    scalefacs=[8.983,8.983,9.0,9.0,9.0,9.0,8.998,8.997]
+    # plot density over atomnum
+    for ensemble, esemblename in zip(thermostats,thermostatnames):
+        for quantity, quantityname in zip(['Density'],['Density[gramm/cm^3]']):
+            for dampval in dampvals:
+                avgvals=[]
+                outfile = './plots/boxsizesim/boxmod_'+ensemble+'_'+quantity+'_damp'+dampval+'.png'
+                for cellnum,atomnum,scalefac in zip(cellnums,atomnums,scalefacs):
+                # for cellnum,atomnum in zip(cellnums,atomnums):
+
+                    celllength=float(cellnum)*5.9*scalefac*1e-8
+                    print(celllength)
+                    density=(float(atomnum)*83.798)/(6.022*1e23*pow(float(celllength),3))
+
+                    # infile  = './results/'+ensemble+'/boxmod_'+quantity+'_damp'+dampval+'_cellnum'+cellnum
+                    print(infile)
+                    
+                    # time   = np.loadtxt(infile, delimiter=' ', usecols=(0,), unpack=True, dtype=float)
+                    # ydata   = np.loadtxt(infile, delimiter=' ', usecols=(1,), unpack=True, dtype=float)
+                    # avgvar = np.average(cut_nparray(ydata))
+                    # avgvals.append(relvar)
+                    avgvals.append(density)
+                plt.plot(atomnums,avgvals,'-ob',label='simulation')
+                plt.plot(atomnums,[0.003749 for a in atomnums],'--b',label='reference value')
+                plt.xlabel('# of atoms')
+                plt.legend(loc='lower right')
+                print("\033[92m"+outfile+"\033[00m\n")
+                plt.gca().set_ylim([0.00365,0.0038])
+                plt.savefig(outfile,format='png')
                 plt.close()
 

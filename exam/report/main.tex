@@ -234,6 +234,106 @@ where $N$ is the number of atoms $k_B$ is the Boltzmann constant, $T$ is the Tem
 \end{center}
 
 
+\begin{center}
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/boxsizesim/boxmod_NPT_Density_damp10.png}~
+\caption[aaa]{Density results as a function of the simulation box size. Clearly, the reference density is very well approximated. On should also take into account, that the $275.15~K$ that the instruction requires is slightly higher than the $°C$ that the provided reference value is based upon.}
+\label{fig:pressure_over_atomnum}
+\end{figure}
+\end{center}
+
+
+
+
+
+
+
+\subsection{Evaluation of CV}
+
+\subsubsection{EQuilibriation}
+First, the system has been equilibriated under NPT enselmble as required in the instructions. The plots, confirming that equilibrium has been reached are shown in Figure~\ref{fig:p1_CV_equi_NPT}.\\
+The inputfile for this task was \href{\pathpartone/in.CV_equi}{in.CV\_equi}.
+
+
+\subsubsection{Estimation of box length}
+The equilibrium box-length estimation under NPT ensemble in visualized in Figure~\ref{fig:p1_CV_equi_NPT_lx}. The equilibrium box length value calculates to $601~\AA$.
+The inputfile for this task was \href{\pathpartone/in.CV_equi}{in.CV\_equi}.
+
+\subsubsection{Equilibriation under NVT-ensemble}
+From the previous simulations we obtain a lattice size of $54.64~\AA$, which corresponds to a scaling factor of $9.26$ w.r.t the original box length of $5.9~\AA$.\\
+This scaling factor has been used in the input file for the following simulations The inputfile for this task was \href{\pathpartone/in.CV_NVT}{in.CV\_NVT}.
+
+\begin{center}
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/equi_TotEng.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/hist_equi_TotEng.png}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/equi_Temp.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/hist_equi_Temp.png}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/equi_Press.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/hist_equi_Press.png}
+\caption[aaa]{Equilibriation of the system under NPT-Ensemble. The left part shows the development of themerodynamic quantities over time, the right figures show the distribution of those quantities after euqilibriation has been reached. Both the target Temperature and target Pressure have been reached with an acceptable standard deviation.}
+\label{fig:p1_CV_equi_NPT}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/equi_Lx.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/CV/hist_equi_Lx.png}
+\caption[aaa]{Estimation of the equilibrium Box length under the NPT emsemble. An equilibriated  value of $601~\AA$ is obtained with a standard deviation of $2.48 \AA$.}
+\label{fig:p1_CV_equi_NPT_lx}
+\end{figure}
+\end{center}
+
+
+\subsubsection{Estimation of specific heat capacity}
+The specific heat capacity $C_v=\left(\frac{\partial E}{\partial T}\right)_{V,N}$ can, according to the instruction be written as a function of the total energy variance: $C_v=\frac{<E^2>-<E>^2}{k_B*T^2}$. I, however had problems with this formula. Even a short dimension analysis doesnt't fit: $\frac{ {(kJ)}^2     }{ (\frac{kJ}{K}) {(K)}^2 } \neq \frac{kJ}{kg K}$.
+However, one can also get a good approximation of $C_V$ by using a finite difference approach.
+I did a central difference around $300.15~K$ with a stencil width of $1~K$ and opbtained a value of $0.1516~\frac{kJ}{kg K}$, which coincides perfectly with the literature.
+The inputfiles for this task were \href{\pathpartone/in.CV_NVT_plus}{in.CV\_NVT\_plus}, postprocessing was done via \href{\pathpartone/postprocess_NVT.sh}{postprocess\_NVT.sh} and the finite difference approximation was cariied out via \href{\pathpartone/calc_CV.py}{calc\_CV.py}.
+
+
+
+
+
+
+
+
+
+\section{Phase transition of Krypton}
+
+
+For the phase transition anlaysis, simualtions between $25~K$ and $230~K$ have been cvaried out with a temperature-step of $1~K$. Each time the final configuration is written to a file and read by the subsequent simulation as a initial configuration.\\
+The inputfiles are \href{\pathpartone/in.phasetrans}{in.phasetrans} for the first simulation and \href{\pathpartone/in.phasetrans_template}{in.phasetrans\_template} for all following.\\
+The results are postprocessed via \href{\pathpartone/postprocess_phasetrans.py}{postprocess\_phasetrans.py} and plotted via \href{\pathpartone/plot_phasetrans.py}{plot\_phasetrans.py}.\\
+For the non-dimensionalization, the equilibrium box length is read from the logfile for each temperature.
+
+
+
+\begin{center}
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/Density.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/red_Density.png}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/detail1/Density.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/detail1/red_Density.png}
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/detail2/Density.png}~
+\includegraphics[width=0.5\textwidth]{\fullpathpartone/plots/phasetrans/detail2/red_Density.png}
+\caption[aaa]{aa}
+\label{fig:aa}
+\end{figure}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsubsection{Prove of equilibrium}
