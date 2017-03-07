@@ -19,7 +19,7 @@ Just like the the class, the repository is oragnized in the folders [lecture](le
 
 Additionally, folder [exam](exam) holds all input-data and results used for the exam, folder [report](report) stores the final report written in LaTeX.
 
-## Contents of Tutorials
+## Links to Tutorials
 
 ### [Tutorial 1](tutorial1/README.md)
 ### [Tutorial 2](tutorial2/README.md)
